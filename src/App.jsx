@@ -3,7 +3,7 @@ import UnderConstruction from "./components/UnderConstruction"
 import Portal from "./components/Portal"
 
 export default function App() {
-  const isUnderConstruction = true;
+  const isUnderConstruction = false;
 
   if (isUnderConstruction) {
     return (

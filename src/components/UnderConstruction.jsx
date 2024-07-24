@@ -13,6 +13,8 @@ const UnderConstruction = () => {
   const instagramWebUrl = `https://www.instagram.com/${instagramUsername}/`;
 
   const handleInstagramClick = (event) => {
+    {/* its not redirecting when on desktop, 
+    and when on mobile it opens IG, and popup permission page (cancel and open) */}
     event.preventDefault();
     window.open(instagramAppUrl).focus();
     setTimeout(() => {
