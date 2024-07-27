@@ -1,9 +1,9 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import UnderConstruction from "./components/UnderConstruction"
-import Portal from "./components/Portal"
+import Dashboard from "./components/Dashboard"
 
 export default function App() {
-  const isUnderConstruction = true;
+  const isUnderConstruction = false;
 
   if (isUnderConstruction) {
     return (
@@ -14,7 +14,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/"  element={<Portal />} />
+        <Route path="/"  element={<Dashboard />} />
       </Routes>
       {/* Portal should not be visible */}
       {/* testing */}
