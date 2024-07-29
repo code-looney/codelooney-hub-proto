@@ -12,7 +12,7 @@ const Dashboard = () => {
   return (
     <>
     <Header />
-    <div className={`${context.theme} h-screen w-full`}>
+    <div className={`${context.dark} h-screen w-full`}>
       <DashboardHero className="h-screen w-full flex flex-col text-center outline">
         <MainTitle className="text-white">Life as you know it will never be the same!</MainTitle>
         <Tagline className="text-white">Achieve universal excellence!</Tagline>

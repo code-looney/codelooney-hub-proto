@@ -1,15 +1,17 @@
 // import { faMoon } from "@fortawesome/free-regular-svg-icons";
-import React from "react";
+import React, { useContext } from "react";
 import { IoMoon } from "react-icons/io5";
 import { IoSunny } from "react-icons/io5";
+import { ThemeContext } from "../ThemeContext";
 // import { IconContext } from "react-icons";
 
 const ThemeToggle = () => {
-    const [dark, setDark] = React.useState(false);
+    const context = useContext(ThemeContext);
+    console.log(context)
 
     const darkModeHandler = () => {
-        setDark(!dark);
-        document.body.classList.toggle("dark");
+        context.setDark(!context.dark);
+        document.body.classList.toggle("bg-black");
     }
 
     return (
@@ -17,10 +19,10 @@ const ThemeToggle = () => {
             <button onClick={()=> darkModeHandler()}>
                 {
                     
-                    dark && <IoSunny className="text-[1.25rem]" />
+                    context.dark && <IoSunny className="text-[1.25rem]" />
                 }
                 {
-                    !dark && <IoMoon className="text-[1.25rem]" />
+                    !context.dark && <IoMoon className="text-[1.25rem]" />
                 }
             </button>
         </div>
