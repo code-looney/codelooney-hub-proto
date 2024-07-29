@@ -1,10 +1,13 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
 import Divider from './Divider';
+import { ThemeContext } from '../ThemeContext';
 
 const Navbar = () => {
   // State to manage the navbar's visibility
   const [nav, setNav] = useState(false);
+  const context = useContext(ThemeContext);
+  console.log(context.dark)
 
   // Toggle function to handle the navbar's display
   const handleNav = () => {
@@ -19,7 +22,7 @@ const Navbar = () => {
   ];
 
   return (
-    <div className='flex justify-start md:justify-between items-center h-24 px-4 text-white '>
+    <div className={`flex justify-start md:justify-between items-center h-24 px-4 ${context.dark === false ? "text-red-600" : "text-white"}`}>
       {/* Desktop Navigation */}
       <ul className='hidden md:flex items-center'>
       <Divider className=" w-10 rotate-90 " />

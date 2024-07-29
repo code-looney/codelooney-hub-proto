@@ -11,7 +11,9 @@ const ThemeToggle = () => {
 
     const darkModeHandler = () => {
         context.setDark(!context.dark);
-        document.body.classList.toggle("bg-black");
+        if ("bg-white" === "bg-white") {
+            document.body.classList.toggle("bg-black")
+        };
     }
 
     return (

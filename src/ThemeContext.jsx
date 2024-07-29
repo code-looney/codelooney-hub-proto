@@ -3,27 +3,31 @@ import React, { createContext, useState } from "react";
 const ThemeContext = createContext();
 
 function ThemeProvider({ children }) {
-    const [theme, setTheme] = useState("bg-[#1D2A35]"); // bring back to white
+    const [theme, setTheme] = useState(""); // bring back to white
     const [routes, setRoutes] = useState(null);
-    const [dark, setDark] = React.useState(false);
+    const [dark, setDark] = useState(false);
+    const [fontColor, setFontColor] = useState("");
 
 
-    const toggleTheme = () => {
-        setTheme((prevTheme) => 
-            prevTheme === "bg-white" ? "bg-[#1D2A35]" : "bg-white"
-        );
-    };
+    // const handleheaderFontColor = () => {
+    //     setFontColor((prevTheme) => 
+    //         prevTheme === "text-red-600" ? "text-white" : "text-red-600"
+    //     );
+    // };
 
-    const headerTheme = theme === "bg-white" ? "bg-white" : "bg-black"; // testing
+
+    // const headerTheme = theme === "bg-white" ? "bg-white" : "bg-black"; // testing
+    // const headerFontColor = handleheaderFontColor;
 
     const value = {
         theme,
-        headerTheme,
-        toggleTheme,
+        // toggleTheme,
         routes,
         setRoutes,
         dark,
-        setDark
+        setDark,
+        fontColor,
+        setFontColor,
     };
 
     return (
