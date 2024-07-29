@@ -1,12 +1,21 @@
 {
-    "navigation": [
+    "menu": [
         {
             "page": "TakeOff",
             "id": 1
         },
         {
             "page": "Contact",
-            "id": 2 
+            "id": 2
+        },
+        {
+            "page": "Coach",
+            "dropdown": [
+                    {
+                        "page": "Fitness"
+                    }
+                ],
+            "id": 3
         }
     ]
 }

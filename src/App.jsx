@@ -9,14 +9,14 @@ import { ThemeContext } from "./ThemeContext.jsx";
 
 export default function App() {
   const context = useContext(ThemeContext);
-  const isUnderConstruction = true;
+  const isUnderConstruction = false;
 
 
   const {get, loading} = useFetch(`/`);
 
   useEffect(() => {
     get(`routes.json`)
-    .then(data => context.setRoutes(data.navigation))
+    .then(data => context.setRoutes(data.menu))
   }, [])
 
   if (isUnderConstruction) {
