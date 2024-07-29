@@ -7,12 +7,13 @@ import { ThemeContext } from "../ThemeContext";
 
 const ThemeToggle = () => {
     const context = useContext(ThemeContext);
+    document.body.classList.add("bg-black")
     console.log(context)
 
     const darkModeHandler = () => {
         context.setDark(!context.dark);
-        if ("bg-white" === "bg-white") {
-            document.body.classList.toggle("bg-black")
+        if ("bg-black" === "bg-black") {
+            document.body.classList.toggle("bg-white")
         };
     }
 

@@ -3,9 +3,9 @@ import React, { createContext, useState } from "react";
 const ThemeContext = createContext();
 
 function ThemeProvider({ children }) {
-    const [theme, setTheme] = useState(""); // bring back to white
+    // const [theme, setTheme] = useState(""); // bring back to white
     const [routes, setRoutes] = useState(null);
-    const [dark, setDark] = useState(false);
+    const [dark, setDark] = useState(true);
     const [fontColor, setFontColor] = useState("");
 
 
@@ -20,7 +20,7 @@ function ThemeProvider({ children }) {
     // const headerFontColor = handleheaderFontColor;
 
     const value = {
-        theme,
+        // theme,
         // toggleTheme,
         routes,
         setRoutes,
