@@ -50,13 +50,13 @@ const Navbar = () => {
         } 
       >
         {/* Mobile Logo */}
-        <h1 className='w-full text-lg md:text-3xl font-bold text-[#00df9a] m-4'>CODE LOONEY</h1>
+        <h1 className='w-full text- md:text-3xl font-bold text-[#00df9a] m-4'>CODE LOONEY</h1>
 
         {/* Mobile Navigation Items */}
         {navItems.map(item => (
           <li
             key={item.id}
-            className='p-4 border-b rounded-xl hover:bg-[#00df9a] duration-300 hover:text-black cursor-pointer border-gray-600'
+            className='p-4 border-b  rounded-xl hover:bg-[#00df9a] duration-300 hover:text-black cursor-pointer border-gray-600'
           >
             {item.text}
           </li>
