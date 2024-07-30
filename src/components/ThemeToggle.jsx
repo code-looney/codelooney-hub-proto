@@ -5,7 +5,8 @@ import { IoSunny } from "react-icons/io5";
 import { ThemeContext } from "../ThemeContext";
 // import { IconContext } from "react-icons";
 
-const ThemeToggle = () => {
+const ThemeToggle = (props) => {
+    const {...rest} = props;
     const context = useContext(ThemeContext);
     document.body.classList.add("bg-black")
     console.log(context)
@@ -18,7 +19,7 @@ const ThemeToggle = () => {
     }
 
     return (
-        <div className="w-auto text-yellow-600 flex items-center">
+        <div {...rest}>
             <button onClick={()=> darkModeHandler()}>
                 {
                     

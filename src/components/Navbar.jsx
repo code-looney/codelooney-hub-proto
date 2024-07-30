@@ -22,7 +22,7 @@ const Navbar = () => {
   ];
 
   return (
-    <div className={`flex justify-start md:justify-between items-center h-24 px-4 ${context.dark === false ? "text-red-600" : "text-white"}`}>
+    <div className={`flex justify-start md:justify-between items-center px-4 ${context.dark === false ? "text-red-600" : "text-white"}`}>
       {/* Desktop Navigation */}
       <ul className='hidden md:flex items-center'>
       <Divider className=" w-10 rotate-90 " />
@@ -45,8 +45,8 @@ const Navbar = () => {
       <ul
         className={
           nav 
-          ? 'fixed py-[0.88em] md:hidden left-0 top-0 w-[60%] h-full border-r border-r-gray-900 bg-[#000300] ease-in-out duration-500' 
-          : 'ease-in-out w-[60%] duration-500 fixed top-0 bottom-0 left-[-100%]'
+          ? 'fixed md:hidden left-0 top-0 w-[60%] h-full border-r border-r-gray-900 bg-[#000300]' 
+          : 'e fixed top-0 bottom-0 left-[-100%]'
         } 
       >
         {/* Mobile Logo */}

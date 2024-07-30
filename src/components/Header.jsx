@@ -12,8 +12,9 @@ const Header = () => {
   return (
     <header className={`flex w-full items-center break-all`}>
       <Trademark className='p-4 text-lg md:text-3xl w-full md:w-auto font-bold text-[#00df9a]'>CODE LOONEY</Trademark>
+      <ThemeToggle className="w-auto text-yellow-600 items-center md:hidden flex"  />
       <Navbar />
-      <ThemeToggle />
+      <ThemeToggle className="w-auto text-yellow-600 md:flex items-center hidden"  />
     </header>
   )
 }
