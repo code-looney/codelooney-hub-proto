@@ -22,14 +22,13 @@ const Navbar = () => {
   ];
 
   return (
-    <div className={`flex justify-start md:justify-between items-center px-4 ${context.dark === false ? "text-red-600" : "text-white"}`}>
+    <div className={`flex justify-start md:justify-between items-center p-4 ${context.dark === false ? "text-red-600" : "text-white"}`}>
       {/* Desktop Navigation */}
-      <ul className='hidden md:flex items-center'>
-      <Divider className=" w-10 rotate-90 " />
+      <ul className='hidden md:flex gap-5 items-center'>
         {navItems.map(item => (
           <li
             key={item.id}
-            className='p-4 hover:bg-[#00df9a] text-[1rem] rounded-xl m-2 cursor-pointer duration-300 hover:text-black'
+            className=' hover:bg-[#00df9a] text-[1rem] rounded-xl cursor-pointer duration-300 hover:text-black'
           >
             {item.text}
           </li>
@@ -50,7 +49,7 @@ const Navbar = () => {
         } 
       >
         {/* Mobile Logo */}
-        <h1 className='w-full text- md:text-3xl font-bold text-[#00df9a] m-4'>CODE LOONEY</h1>
+        <h1 className='w-full text-lg md:text-3xl font-bold text-[#00df9a] m-4'>CODE LOONEY</h1>
 
         {/* Mobile Navigation Items */}
         {navItems.map(item => (
