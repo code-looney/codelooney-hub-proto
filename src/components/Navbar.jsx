@@ -7,11 +7,14 @@ const Navbar = () => {
   // State to manage the navbar's visibility
   const [nav, setNav] = useState(false);
   const context = useContext(ThemeContext);
+  const [navItemsHidden, setNavItemsHidden] = useState("hidden");
+  
   console.log(context.dark)
 
   // Toggle function to handle the navbar's display
   const handleNav = () => {
     setNav(!nav);
+    setNavItemsHidden(navItemsHidden === "hidden" ? "block" : "hidden")
   };
 
   // Array containing navigation items
@@ -37,7 +40,7 @@ const Navbar = () => {
 
       {/* Mobile Navigation Icon */}
       <div onClick={handleNav} className='block md:hidden'>
-        {nav ? <AiOutlineClose size={20} /> : <AiOutlineMenu size={20} />}
+        {nav ? <AiOutlineClose className='w-full'  size={25} /> : <AiOutlineMenu className='w-full' size={25} />}
       </div>
 
       {/* Mobile Navigation Menu */}
@@ -49,14 +52,14 @@ const Navbar = () => {
         } 
       >
         {/* Mobile Logo */}
-        <h1 className='w-full text-lg md:text-3xl font-bold text-[#00df9a] m-4'>CODE LOONEY</h1>
+        <h1 className={`w-full text-lg md:text-3xl font-bold ${navItemsHidden} w-full text-[#00df9a] m-4`}>CODE LOONEY</h1>
 
         {/* Mobile Navigation Items */}
         {navItems.map(item => (
           <li
             key={item.id}
-            className='p-4 border-b  rounded-xl hover:bg-[#00df9a] duration-300 hover:text-black cursor-pointer border-gray-600'
-          >
+            className={`p-4 border-b ${navItemsHidden} rounded-xl hover:bg-[#00df9a] duration-300 hover:text-black cursor-pointer border-gray-600`
+            }>
             {item.text}
           </li>
         ))}
