@@ -39,8 +39,8 @@ const Navbar = () => {
       </ul>
 
       {/* Mobile Navigation Icon */}
-      <div onClick={handleNav} className='block md:hidden'>
-        {nav ? <AiOutlineClose className='w-full'  size={25} /> : <AiOutlineMenu className='w-full' size={25} />}
+      <div onClick={handleNav} className='block md:hidden w-full'>
+        {nav ? <AiOutlineClose className='w-full' size={30} /> : <AiOutlineMenu className='w-full' size={30} />}
       </div>
 
       {/* Mobile Navigation Menu */}
@@ -52,7 +52,7 @@ const Navbar = () => {
         } 
       >
         {/* Mobile Logo */}
-        <h1 className={`w-full text-lg md:text-3xl font-bold ${navItemsHidden} w-full text-[#00df9a] m-4`}>CODE LOONEY</h1>
+        <h1 className={`w-full text-2xl md:text-3xl font-bold ${navItemsHidden} w-full text-[#00df9a] m-4`}>CODE LOONEY</h1>
 
         {/* Mobile Navigation Items */}
         {navItems.map(item => (
