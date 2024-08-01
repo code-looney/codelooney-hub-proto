@@ -23,10 +23,10 @@ const ThemeToggle = (props) => {
             <button onClick={()=> darkModeHandler()}>
                 {
                     
-                    context.dark && <IoSunny className="text-[1.25rem] w-full" />
+                    context.dark && <IoSunny className="text-[1.5rem] w-full" />
                 }
                 {
-                    !context.dark && <IoMoon className="text-[1.25rem] w-full" />
+                    !context.dark && <IoMoon className="text-[1.5rem] w-full" />
                 }
             </button>
         </div>
