@@ -1,6 +1,6 @@
 import React from 'react'
 
-const DashboardHero = ( props ) => {
+const HeroDashboard = ( props ) => {
     const {children, ...rest} = props;
     
   return (
@@ -8,4 +8,4 @@ const DashboardHero = ( props ) => {
   )
 }
 
-export default DashboardHero
+export default HeroDashboard
