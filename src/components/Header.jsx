@@ -11,12 +11,14 @@ const Header = () => {
     console.log(context)
 
   return (
-    <header className={`flex w-full items-center break-all outline`}>
-      <Trademark className='p-4 text-2xl md:text-3xl w-full md:w-auto font-bold text-[#00df9a]'>CODE LOONEY</Trademark>
-      <ThemeToggle className="w-auto p-4 text-yellow-600 items-center md:hidden flex"  />
-      <Divider className=" md:flex hidden items-center border-l border-slate-200  pl-6 dark:border-slate-800 rotate-90 " />
+    <header className={`flex w-full outline items-center`}>
+      {/* <ThemeToggle className="w-auto p-4 text-yellow-600 items-center md:hidden flex"  /> */}
+      {/* <Divider className=" md:flex hidden items-center border-l border-slate-200  pl-6 dark:border-slate-800 rotate-90 " /> */}
+      <Trademark className='p-4 flex text-2xl w-full font-bold text-[#00df9a]'>CODE LOONEY
+        <Divider />
+      </Trademark>
       <Navbar />
-      <ThemeToggle className="w-auto text-yellow-600 md:flex items-center hidden"  />
+      {/* <ThemeToggle className="w-auto text-yellow-600 md:flex items-center hidden"  /> */}
     </header>
   )
 }

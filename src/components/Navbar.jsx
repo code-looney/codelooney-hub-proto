@@ -19,10 +19,12 @@ const Navbar = () => {
 
   // Array containing navigation items
   const navItems = [
-    { id: 1, text: 'TakeOff' },
-    { id: 2, text: 'Coach' },
-
-  ];
+    { name: 'TakeOff', href: '#', current: true, id: 1 },
+    { name: 'Coach', href: '#', current: false, id: 2 },
+    { name: 'Projects', href: '#', current: false, id: 3 },
+    { name: 'Contact', href: '#', current: false, id: 4 },
+  ]
+  
 
   return (
     <div className={`flex justify-start md:justify-between items-center p-4 ${context.dark === false ? "text-red-600" : "text-white"}`}>
@@ -31,9 +33,9 @@ const Navbar = () => {
         {navItems.map(item => (
           <li
             key={item.id}
-            className=' hover:bg-[#00df9a] text-[1rem] rounded-xl cursor-pointer duration-300 hover:text-black'
+            className=' hover:bg-[#00df9a] p-4 text-[1rem] rounded-xl cursor-pointer duration-300 hover:text-black'
           >
-            {item.text}
+            {item.name}
           </li>
         ))}
       </ul>
@@ -60,7 +62,7 @@ const Navbar = () => {
             key={item.id}
             className={`p-4 border-b ${navItemsHidden} rounded-xl hover:bg-[#00df9a] duration-300 hover:text-black cursor-pointer border-gray-600`
             }>
-            {item.text}
+            {item.name}
           </li>
         ))}
       </ul>
