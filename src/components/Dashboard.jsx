@@ -16,7 +16,7 @@ const Dashboard = () => {
   const context = useContext(AppContext);
 
   return (
-    <div className='bg-black flex flex-col'>
+    <div className='bg-black flex flex-col h-screen overflow-hidden'>
     <Header />
     <MobileMenu />
     <div className={`w-full h-full flex items-center flex-col pt-5`}>
