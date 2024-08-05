@@ -17,7 +17,7 @@ const Header = () => {
         <hr className='w-full translate-x-32 hidden absolute' />
     </div>
     <div className='h-[40px] w-[187.5px] flex justify-end items-center right-0 top-0 pr-[1.5em] md:hidden'>
-        <Link onClick={() => context.handleToggleMobileMenu()}><img src="public/images/icon-hamburger.svg" alt="hamburger open icoon" /></Link>
+        <Link onClick={() => context.handleToggleMobileMenu()}><img src="/images/icon-hamburger.svg" alt="hamburger open icoon" /></Link>
     </div>
           {/* Desktop Navigation */}
           <ul className='hidden md:flex'>

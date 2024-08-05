@@ -8,7 +8,7 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        "portrait": "url(public/images/47307CAB-0ADE-4396-9A44-A2CFF313D460.jpeg)"
+        "portrait": "url(/images/47307CAB-0ADE-4396-9A44-A2CFF313D460.jpeg)"
       },
       colors: {
         "themeColor": "#121212"
