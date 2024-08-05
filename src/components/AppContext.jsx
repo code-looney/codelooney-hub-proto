@@ -102,6 +102,7 @@ function AppProvider({ children }) {
         instagramWebUrl,
         instagramUsername,
         handleInstagramClick,
+        handleSubmit,
         toggleMobileMenuIcons: toggleMobileMenu ? "close" : "hamburger" // Derived state
     };
 
