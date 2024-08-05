@@ -16,11 +16,11 @@ const Dashboard = () => {
   const context = useContext(AppContext);
 
   return (
-    <div className='bg-black h-screen flex flex-col gap-[1em]'>
+    <div className='bg-black h-screen flex flex-col'>
     <Header />
     <MobileMenu />
-    <div className={`w-full h-full flex items-center flex-col`}>
-      <HeroDashboard className="w-full outline flex items-center flex-col text-center gap-5 px-">
+    <div className={`w-full h-full flex items-center flex-col pt-5`}>
+      <HeroDashboard className="w-full outline flex items-center flex-col text-center gap-">
         <div aria-label="Portret van mij"className='bg-portrait bg-contain bg-center rounded-full w-[200px] h-[200px]'></div>
         <MyName className="text-white uppercase text-[3rem]">Daneel</MyName>
         <div className='flex flex-col gap-10'>
@@ -50,7 +50,7 @@ const Dashboard = () => {
       >
         <div className="text-center h-full flex justify-end items-end bg-black bg-opacity-50 p-8 rounded-lg shadow-lg text-white">
           <div className=" animate-bounce flex items-center flex-col gap-5">
-            <div className='flex gap-3='>
+            <div className='flex gap-3'>
               <a onClick={context.handleInstagramClick} href={context.instagramAppUrl} rel="noopener noreferrer" className="block focus:outline-none">
                 <InstagramLogoIcon />
               </a>

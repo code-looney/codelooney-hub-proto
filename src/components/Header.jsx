@@ -11,12 +11,12 @@ const Header = () => {
     const context = useContext(AppContext);
 
   return (
-    <header className='w-full h-[120px] o flex justify-between items-center tracking-widest relative'>
-    <div className='relative gap-[64px] w-full items-center z-40 lg:min-w-[160px] pl-[1.5em] flex'>
+    <header className='w-full flex h-[130px] justify-between items-center tracking-widest relative'>
+    <div className='relative w-full items-center z-40 pl-[1.5em] flex'>
         <Link className='w-full'><span className='uppercase text-xl w-full font-bold text-[#00df9a]'>Code Looney</span></Link>
         <hr className='w-full translate-x-32 hidden absolute' />
     </div>
-    <div className='h-[40px] w-[187.5px] flex justify-end items-center right-0 top-0 pr-[1.5em] md:hidden'>
+    <div className='w-[187.5px] flex justify-end items-center right-0 top-0 pr-[1.5em] md:hidden'>
         <Link onClick={() => context.handleToggleMobileMenu()}><img src="/images/icon-hamburger.svg" alt="hamburger open icoon" /></Link>
     </div>
           {/* Desktop Navigation */}
@@ -24,7 +24,7 @@ const Header = () => {
         {context.router && context.router.map(item => (
           <li
             key={item.id}
-            className='p-4 hover:bg-[#00df9a] text-white rounded-xl m-2 cursor-pointer duration-300 hover:text-black'
+            className='p-4 hover:bg-[#00df9a] text-white rounded-xl cursor-pointer duration-300 hover:text-black'
           >
             {item.page}
           </li>
