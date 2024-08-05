@@ -11,6 +11,8 @@ function AppProvider({ children }) {
     const [hoverUnderlineColor, setHoverUnderlineColor] = useState(1);
     const [toggleMobileMenu, setToggleMobileMenu] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
+    const instagramUsername = 'codelooney';
+
 
     // useEffect(() => {
     //     fetch(`/routes.json`)
@@ -20,6 +22,22 @@ function AppProvider({ children }) {
     //             setMainButtonText(data.mainButton.text);
     //         });
     // }, []);
+
+      // Construct the Instagram app URI
+  const instagramAppUrl = `instagram://user?username=${instagramUsername}`;
+  // Fallback URL in case Instagram app is not installed
+  const instagramWebUrl = `https://www.instagram.com/${instagramUsername}/`;
+
+  const handleInstagramClick = (event) => {
+    {/* its not redirecting when on desktop, 
+    and when on mobile it opens IG, and popup permission page (cancel and open) */}
+    event.preventDefault();
+    window.open(instagramAppUrl).focus();
+    setTimeout(() => {
+      window.open(instagramWebUrl).focus();
+    });
+  };
+
 
     useEffect(() => {
         fetch(`route.json`)
@@ -55,6 +73,10 @@ function AppProvider({ children }) {
         handleToggleMobileMenu,
         toggleMobileMenu,
         isOpen,
+        instagramAppUrl,
+        instagramWebUrl,
+        instagramUsername,
+        handleInstagramClick,
         toggleMobileMenuIcons: toggleMobileMenu ? "close" : "hamburger" // Derived state
     };
 
