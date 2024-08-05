@@ -22,7 +22,7 @@ const MobileMenu = () => {
                text-white backdrop-blur-xl z-40 bg-white/5`}>
                 {/* zoek een oplossing om de menu te sluiten wanneer md bereikt */}
                 <ul className='transition duration-300 ease-in-out '>
-                    <li className='h-[110px] flex justify-end items-center pr-[1.5em] '>
+                    <li className='h-[130px] flex justify-end items-center pr-[1.5em] '>
                         <button aria-expanded={context.toggleMobileMenu}  onClick={context.handleToggleMobileMenu}>
                             <img className='w-[24px]' src={`/images/icon-close.svg`} alt="menu sluit icoon" />
                         </button>
