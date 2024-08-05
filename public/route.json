@@ -1,0 +1,30 @@
+{
+    "navigation": [
+        {
+            "page": "TakeOff",
+            "order": "00",
+            "id": 1
+        },
+        {
+            "page": "Coach",
+            "order": "01",
+            "id": 2 
+        },
+        {
+            "page": "Projects",
+            "order": "02",
+            "id": 3
+
+        },
+        {
+            "page": "Contact",
+            "order": "03",
+            "id": 4 
+        }
+    ],
+
+    "mainButton": {
+        "text": "Explore"
+    }
+
+}

@@ -14,10 +14,10 @@ export default function App() {
 
   const {get, loading} = useFetch(`/`);
 
-  useEffect(() => {
-    get(`routes.json`)
-    .then(data => context.setRoutes(data.menu))
-  }, [])
+  // useEffect(() => {
+  //   get(`routes.json`)
+  //   .then(data => context.setRoutes(data.menu))
+  // }, [])
 
   if (isUnderConstruction) {
     return (

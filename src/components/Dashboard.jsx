@@ -5,13 +5,16 @@ import MainTitle from './MainTitle'
 import HeroDashboard from './HeroDashboard'
 import Tagline from './Tagline'
 import { ThemeContext } from '../ThemeContext'
+import MobileMenu from './MobileMenu'
+import { AppContext } from './AppContext'
 
 const Dashboard = () => {
-  const context = useContext(ThemeContext);
+  const context = useContext(AppContext);
 
   return (
     <div className='bg-black'>
     <Header />
+    <MobileMenu />
     <div className={`h-screen w-full flex items-center justify-center`}>
       <HeroDashboard className="h-screen w-full flex items-center flex-col text-center px-10">
         <MainTitle className="text-white uppercase ">Achieve universal excellence!</MainTitle>
