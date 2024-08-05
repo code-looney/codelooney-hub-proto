@@ -12,14 +12,14 @@ const Header = () => {
 
   return (
     <header className='w-full flex justify-between items-center tracking-widest relative py-7'>
-    <div className='relative w-full items-center z-40 pl-[1.5em] flex'>
+    <div className='relative w-full items-center z-40 pl-[1.5rem] md:pl-[2rem] flex'>
         <Link className='w-full'><span className='uppercase text-xl w-full font-bold text-[#00df9a]'>Code Looney</span></Link>
     </div>
-    <div className='w-[187.5px] flex justify-end items-center right-0 top-0 pr-[1.5em] md:hidden'>
+    <div className='w-[187.5px] flex justify-end items-center right-0 top-0 pr-[1.5rem] md:hidden'>
         <Link onClick={() => context.handleToggleMobileMenu()}><img src="/images/icon-hamburger.svg" alt="hamburger open icoon" /></Link>
     </div>
           {/* Desktop Navigation */}
-          <ul className='hidden md:flex'>
+          <ul className='hidden md:flex md:pr-[1rem]'>
         {context.router && context.router.map(item => (
           <li
             key={item.id}
