@@ -16,16 +16,18 @@ const Dashboard = () => {
   const context = useContext(AppContext);
 
   return (
-    <div className='bg-black h-screen flex flex-col gap-[3em]'>
+    <div className='bg-black h-screen flex flex-col gap-[1em]'>
     <Header />
     <MobileMenu />
     <div className={`w-full h-full flex items-center flex-col`}>
-      <HeroDashboard className="w-full outline flex items-center flex-col text-center px-10">
+      <HeroDashboard className="w-full outline flex items-center flex-col text-center gap-5 px-">
         <div aria-label="Portret van mij"className='bg-portrait bg-contain bg-center rounded-full w-[200px] h-[200px]'></div>
         <MyName className="text-white uppercase text-[3rem]">Daneel</MyName>
-        <div className='flex flex-col gap-3'>
-          <MainTitle className="text-white uppercase ">Achieve universal excellence!</MainTitle>
-          <Tagline className="text-white uppercase">Life as you know it will never be the same!</Tagline>
+        <div className='flex flex-col gap-10'>
+          <div className='flex flex-col gap-2'>
+            <MainTitle className="text-white uppercase ">Achieve universal excellence!</MainTitle>
+            <Tagline className="text-white uppercase">Life as you know it will never be the same!</Tagline>
+          </div>
           <Button
           type="button"
           className="text-green-700 uppercase hover:text-white border border-green-700 select-none
@@ -47,8 +49,8 @@ const Dashboard = () => {
         leaveTo="opacity-0"
       >
         <div className="text-center h-full flex justify-end items-end bg-black bg-opacity-50 p-8 rounded-lg shadow-lg text-white">
-          <div className=" mb-5 animate-bounce flex items-center flex-col gap-5">
-            <div className='flex gap-3'>
+          <div className=" animate-bounce flex items-center flex-col gap-5">
+            <div className='flex gap-3='>
               <a onClick={context.handleInstagramClick} href={context.instagramAppUrl} rel="noopener noreferrer" className="block focus:outline-none">
                 <InstagramLogoIcon />
               </a>

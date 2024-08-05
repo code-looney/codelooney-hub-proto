@@ -11,7 +11,7 @@ const Header = () => {
     const context = useContext(AppContext);
 
   return (
-    <header className='w-full h-[88px] flex justify-between items-center tracking-widest relative outline'>
+    <header className='w-full h-[120px] o flex justify-between items-center tracking-widest relative'>
     <div className='relative gap-[64px] w-full items-center z-40 lg:min-w-[160px] pl-[1.5em] flex'>
         <Link className='w-full'><span className='uppercase text-xl w-full font-bold text-[#00df9a]'>Code Looney</span></Link>
         <hr className='w-full translate-x-32 hidden absolute' />
