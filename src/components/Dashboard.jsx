@@ -28,7 +28,7 @@ const Dashboard = () => {
         <div className='flex items-center flex-col gap-10'>
           <div className='flex flex-col gap-2'>
             <MainTitle className="text-white uppercase ">Achieve universal excellence!</MainTitle>
-            <Tagline className="text-white uppercase">Life as you know it will never be the same!</Tagline>
+            <Tagline className="text-white uppercase">Life as you know it will never be the same!!!</Tagline>
           </div>
           <Button 
           onClick={() => context.setOpen(true)}
