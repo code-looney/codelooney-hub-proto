@@ -17,17 +17,17 @@ const MobileMenu = () => {
           leaveFrom="transform translate-x-0 opacity-100"
           leaveTo="transform translate-x-full opacity-0"
           >
-            <div className={`flex-col w-[200px] h-full right-0 top-0 absolute
+            <div className={`flex-col fixed right-0 top-0 w-[50%] h-full border-l border-l-gray-900 bg-[#000300] ease-in-out duration-500
               ${context.toggleMobileMenu === false ? `transition transform duration-700 ease-in-out translate-x-0 opacity-100` : "" }
                text-white backdrop-blur-xl z-40 bg-white/5`}>
-                <ul className='h-full w-full flex flex-col gap-[2em]'>
-                    <li className='h-[88px] flex justify-end items-center pr-[1.5em]'>
+                <ul className='transition duration-300 ease-in-out '>
+                    <li className='h-[88px] flex justify-end items-center pr-[1.5em] '>
                         <button aria-expanded={context.toggleMobileMenu}  onClick={context.handleToggleMobileMenu}>
                             <img className='w-[24px]' src={`public/images/icon-close.svg`} alt="menu icon" />
                         </button>
                     </li>
                     {context.router && context.router.map(route => (
-                        <li key={route.id} className={`pl-[2em] flex uppercase tracking-[0.125em] border-r-4 gap-3 hover:border-opacity-50 ease-in-out duration-700 hover:border-r-white 
+                        <li key={route.id} className={`p-4 border-b rounded-xl hover:bg-[#00df9a] duration-300 hover:text-black cursor-pointer border-gray-600
                             ${context.hoverUnderlineColor === route.id ? 'border-r-white' : 'border-r-transparent'}`}>
                             <NavLink onClick={() => context.handleNavLinkHover(route.id)} 
                                 className="flex gap-3 justify-self-center text-[14px] font-barlowCondensed">
