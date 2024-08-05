@@ -16,7 +16,7 @@ const Dashboard = () => {
   const context = useContext(AppContext);
 
   return (
-    <div className='bg-black h-screen flex flex-col gap-[5em]'>
+    <div className='bg-black h-screen flex flex-col gap-[3em]'>
     <Header />
     <MobileMenu />
     <div className={`w-full h-full flex items-center flex-col`}>
