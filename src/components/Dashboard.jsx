@@ -15,6 +15,7 @@ import SignUpForm from './SignUpForm'
 
 const Dashboard = () => {
   const context = useContext(AppContext);
+  console.log(context.open)
 
   return (
     <div className='bg-black flex flex-col h-screen overflow-hidden'>
@@ -29,7 +30,8 @@ const Dashboard = () => {
             <MainTitle className="text-white uppercase ">Achieve universal excellence!</MainTitle>
             <Tagline className="text-white uppercase">Life as you know it will never be the same!</Tagline>
           </div>
-          <Button
+          <Button 
+          onClick={() => context.setOpen(true)}
           type="button"
           className="text-green-700 uppercase hover:text-white border border-green-700 select-none
           hover:bg-green-800 ease-in-out duration-700 transition focus:ring-4

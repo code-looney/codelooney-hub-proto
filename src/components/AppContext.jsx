@@ -11,6 +11,9 @@ function AppProvider({ children }) {
     const [hoverUnderlineColor, setHoverUnderlineColor] = useState(1);
     const [toggleMobileMenu, setToggleMobileMenu] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
+    const [email, setEmail] = useState('');
+    const [option, setOption] = useState('');
+    const [open, setOpen] = useState(false)
     const instagramUsername = 'codelooney';
 
 
@@ -55,6 +58,25 @@ function AppProvider({ children }) {
     const handleToggleMobileMenu = () => {
         setToggleMobileMenu(prevState => !prevState);
     };
+  
+    const handleEmailChange = (e) => {
+      setEmail(e.target.value);
+    };
+  
+    const handleOptionChange = (e) => {
+      setOption(e.target.value);
+    };
+  
+    const handleClose = () => {
+      // Logic to handle close (e.g., hide form, navigate away, etc.)
+      console.log('Form closed');
+    };
+  
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      // Handle form submission logic here
+      console.log('Form submitted with:', { email, option });
+    };
 
     const value = {
         router,
@@ -72,7 +94,10 @@ function AppProvider({ children }) {
         handleNavLinkHover,
         handleToggleMobileMenu,
         toggleMobileMenu,
+        open,
         isOpen,
+        setOpen,
+        setIsOpen,
         instagramAppUrl,
         instagramWebUrl,
         instagramUsername,
