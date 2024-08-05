@@ -9,7 +9,7 @@ import { ThemeContext } from "./ThemeContext.jsx";
 
 export default function App() {
   const context = useContext(ThemeContext);
-  const isUnderConstruction = false;
+  const isUnderConstruction = true;
 
 
   const {get, loading} = useFetch(`/`);

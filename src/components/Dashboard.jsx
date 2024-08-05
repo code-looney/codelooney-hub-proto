@@ -48,7 +48,7 @@ const Dashboard = () => {
         leaveFrom="opacity-100"
         leaveTo="opacity-0"
       >
-        <div className="text-center h-full flex justify-end items-end bg-black bg-opacity-50 p-8 rounded-lg shadow-lg text-white">
+        <div className="text-center h-full md:items-center flex justify-end items-end bg-black bg-opacity-50 p-8 rounded-lg shadow-lg text-white">
           <div className=" animate-bounce flex items-center flex-col gap-5">
             <div className='flex gap-3'>
               <a onClick={context.handleInstagramClick} href={context.instagramAppUrl} rel="noopener noreferrer" className="block focus:outline-none">
