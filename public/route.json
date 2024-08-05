@@ -1,12 +1,12 @@
 {
     "navigation": [
         {
-            "page": "TakeOff",
+            "page": "Start here",
             "order": "00",
             "id": 1
         },
         {
-            "page": "Coach",
+            "page": "Coaching",
             "order": "01",
             "id": 2 
         },
@@ -21,10 +21,6 @@
             "order": "03",
             "id": 4 
         }
-    ],
-
-    "mainButton": {
-        "text": "Explore"
-    }
+    ]
 
 }

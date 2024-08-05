@@ -19,7 +19,7 @@ const Header = () => {
         <Link onClick={() => context.handleToggleMobileMenu()}><img src="/images/icon-hamburger.svg" alt="hamburger open icoon" /></Link>
     </div>
           {/* Desktop Navigation */}
-          <ul className='hidden md:flex md:pr-[1rem]'>
+          <ul className='hidden md:flex md:pr-[1rem] w-full justify-end'>
         {context.router && context.router.map(item => (
           <li
             key={item.id}

@@ -11,6 +11,7 @@ import MyName from './MyName'
 import InstagramLogoIcon from './InstagramLogoIcon'; // Import the Instagram logo SVG component
 import GitHubLogoIcon from './GithubLogoIcon'; // Import the GitHub logo SVG component
 import { Transition } from '@headlessui/react'
+import SignUpForm from './SignUpForm'
 
 const Dashboard = () => {
   const context = useContext(AppContext);

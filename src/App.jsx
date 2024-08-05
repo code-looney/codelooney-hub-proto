@@ -6,10 +6,11 @@ import Contact from "./components/Contact.jsx";
 import useFetch from "./components/useFetch.jsx";
 import { useContext, useEffect, useState } from "react";
 import { ThemeContext } from "./ThemeContext.jsx";
+import SignUpForm from "./components/SignUpForm.jsx";
 
 export default function App() {
   const context = useContext(ThemeContext);
-  const isUnderConstruction = false;
+  const isUnderConstruction = true;
 
 
   const {get, loading} = useFetch(`/`);
@@ -27,6 +28,7 @@ export default function App() {
 
   return (
         <BrowserRouter>
+         <SignUpForm />
           <Routes>
             <Route path="/"  element={<Dashboard />} />
             <Route path="/take-off"  element={<TakeOff />} />
