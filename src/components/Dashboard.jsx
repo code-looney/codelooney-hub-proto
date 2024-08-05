@@ -19,7 +19,7 @@ const Dashboard = () => {
     <div className='bg-black flex flex-col h-screen overflow-hidden'>
     <Header />
     <MobileMenu />
-    <div className={`w-full h-full flex items-center flex-col pt-5`}>
+    <div className={`w-full  flex items-center flex-col pt-5`}>
       <HeroDashboard className="w-full outline flex items-center flex-col text-center gap-">
         <div aria-label="Portret van mij"className='bg-portrait bg-contain bg-center rounded-full w-[200px] h-[200px]'></div>
         <MyName className="text-white uppercase text-[3rem]">Daneel</MyName>
