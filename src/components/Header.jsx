@@ -11,7 +11,7 @@ const Header = () => {
     const context = useContext(AppContext);
 
   return (
-    <header className='w-full flex justify-between items-center tracking-widest relative py-10'>
+    <header className='w-full flex justify-between items-center tracking-widest relative py-7'>
     <div className='relative w-full items-center z-40 pl-[1.5em] flex'>
         <Link className='w-full'><span className='uppercase text-xl w-full font-bold text-[#00df9a]'>Code Looney</span></Link>
     </div>
