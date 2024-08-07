@@ -12,6 +12,8 @@ const UnderConstruction = () => {
     document.title = "⏳ Code Looney";
   }, []);
 
+  const title = "Daneel";
+
   return (
     <div className="flex items-center justify-center min-h-screen bg-black">
       <Transition

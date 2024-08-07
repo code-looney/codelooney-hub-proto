@@ -75,7 +75,7 @@ function AppProvider({ children }) {
     const handleSubmit = (e) => {
       e.preventDefault();
       // Handle form submission logic here
-      console.log('Form submitted with:', { email, option });
+      
     };
 
     const value = {
