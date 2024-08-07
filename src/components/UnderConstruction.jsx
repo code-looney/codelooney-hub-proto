@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Transition } from '@headlessui/react';
 import InstagramLogoIcon from './InstagramLogoIcon'; // Import the Instagram logo SVG component
 import GitHubLogoIcon from './GithubLogoIcon'; // Import the GitHub logo SVG component
@@ -6,13 +6,12 @@ import { AppContext } from './AppContext';
 import App from '../App';
 
 const UnderConstruction = () => {
+  const [counter, setCounter] = useState(0);
   const context = useContext(AppContext)
   // Replace 'YOUR_INSTAGRAM_USERNAME' with your actual Instagram username
   useEffect(() => {
     document.title = "⏳ Code Looney";
   }, []);
-
-  const title = "Daneel";
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-black">

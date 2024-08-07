@@ -15,7 +15,6 @@ import SignUpForm from './SignUpForm'
 
 const Dashboard = () => {
   const context = useContext(AppContext);
-  console.log(context.open)
 
   return (
     <div className='bg-black flex flex-col h-screen overflow-hidden'>

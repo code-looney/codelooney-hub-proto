@@ -18,7 +18,7 @@ const SignUpForm = () => {
             X
             </button>
             <form onSubmit={context.handleSubmit} className="text-center">
-            <h2 className="text-2xl font-semibold mb-4">Register today!</h2>
+            <h2 className="text-2xl font-semibold mb-4 uppercase">Register today!</h2>
             <div className="mb-4">
                 <label htmlFor="email" className="block text-gray-700 mb-2">Your Email:</label>
                 <input

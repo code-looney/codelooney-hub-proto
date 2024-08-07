@@ -5,7 +5,6 @@ import { Transition } from '@headlessui/react';
 
 const MobileMenu = () => {
     const context = useContext(AppContext);
-    console.log(context.toggleMobileMenu)
 
     return (
         <Transition

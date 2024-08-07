@@ -9,7 +9,6 @@ const ThemeToggle = (props) => {
     const {...rest} = props;
     const context = useContext(ThemeContext);
     document.body.classList.add("bg-black")
-    console.log(context)
 
     const darkModeHandler = () => {
         context.setDark(!context.dark);
