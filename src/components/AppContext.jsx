@@ -1,4 +1,6 @@
 import React, { createContext, useState, useEffect } from "react";
+import { useForm } from '@formspree/react';
+
 
 const AppContext = createContext();
 
@@ -15,7 +17,6 @@ function AppProvider({ children }) {
     const [option, setOption] = useState('');
     const [open, setOpen] = useState(false)
     const instagramUsername = 'codelooney';
-
 
     // useEffect(() => {
     //     fetch(`/routes.json`)
@@ -60,6 +61,7 @@ function AppProvider({ children }) {
     };
   
     const handleEmailChange = (e) => {
+      console.log(e.target.value)
       setEmail(e.target.value);
     };
   
@@ -75,6 +77,8 @@ function AppProvider({ children }) {
     const handleSubmit = (e) => {
       e.preventDefault();
       // Handle form submission logic here
+      console.log('submitted')
+      setEmail("")
       
     };
 
@@ -103,6 +107,7 @@ function AppProvider({ children }) {
         instagramUsername,
         handleInstagramClick,
         handleSubmit,
+        handleEmailChange,
         toggleMobileMenuIcons: toggleMobileMenu ? "close" : "hamburger" // Derived state
     };
 
