@@ -12,7 +12,7 @@ import { Transition } from '@headlessui/react'
 export default function App() {
   const context = useContext(ThemeContext);
   const [open, setOpen] = useState(false)
-  const isUnderConstruction = false;
+  const isUnderConstruction = true;
 
 
   const {get, loading} = useFetch(`/`);
