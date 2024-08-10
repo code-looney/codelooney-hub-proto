@@ -1,10 +1,17 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { AppContext } from './AppContext';
 import { NavLink } from 'react-router-dom';
 import { Transition } from '@headlessui/react';
+import OneToOneCoachingCall from './OneToOneCoachingCall';
 
-const MobileMenu = () => {
+const MobileMenu = (props) => {
+    const [dropdownOpen, setDropdownOpen] = useState(false);
     const context = useContext(AppContext);
+
+
+    const handleDropdownClick = () => {
+            setDropdownOpen(prev => !prev)
+    }
 
     return (
         <Transition
@@ -27,14 +34,32 @@ const MobileMenu = () => {
                         </button>
                     </li>
                     {context.router && context.router.map(route => (
-                        <li key={route.id} className={`p-4 border-b rounded-xl hover:bg-[#00df9a] duration-300 hover:text-black cursor-pointer border-gray-600
+                        <>
+                        <li key={route.id} className={` border-b rounded-xl hover:bg-[#00df9a] duration-300 hover:text-black cursor-pointer border-gray-600
                             ${context.hoverUnderlineColor === route.id ? 'border-r-white' : 'border-r-transparent'}`}>
-                            <NavLink onClick={() => context.handleNavLinkHover(route.id)} 
-                                className="flex gap-3 justify-self-center text-[14px] font-barlowCondensed">
+                            <NavLink to={`/${route.page === "Coaching" ? "" : route.page}`} onClick={() => handleDropdownClick(route.id)} 
+                                className="flex gap-3 rounded-xl  p-4 justify-self-center text-[14px] font-barlowCondensed">
                                 <span className='font-bold'>{route.order}</span>
-                                {route.page}
+                                {route.page} 
+                                {route.page === "Coaching" ? <span className={`transition-transform duration-700 ${dropdownOpen ? 'rotate-180' : 'rotate-0'}`}>{"▼"}</span> : ""}
                             </NavLink>
                         </li>
+                        <li className={`${dropdownOpen}`}>
+                        <Transition
+                                show={dropdownOpen && route.page === "Coaching"}
+                                enter="transition-all duration-300 ease-in-out"
+                                enterFrom="opacity-0 max-h-0"
+                                enterTo="opacity-100 max-h-[500px]"
+                                leave="transition-all duration-300 ease-in-out"
+                                leaveFrom="opacity-100 max-h-[500px]"
+                                leaveTo="opacity-0 max-h-0"
+                                    >
+                            <div className={`${route.page === "Coaching" ? "flex justify-center" : null}`}>
+                                <NavLink className="block rounded-xl p-4 text-[14px] font-barlowCondensed hover:bg-[#00df9a] hover:text-black duration-300" to={`/${route.page === "Coaching" ? "1-to-one-coaching-call" : null}`}>{route.page === "Coaching" ? "1 To 1 Coaching Call" : null}</NavLink>
+                            </div>
+                        </Transition>
+                        </li>
+                        </>
                     ))}
                 </ul>
             </div>

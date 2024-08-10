@@ -3,15 +3,12 @@ import Header from './Header'
 import Button from './Button'
 import MainTitle from './MainTitle'
 import HeroDashboard from './HeroDashboard'
-import Tagline from './Tagline'
-import { ThemeContext } from '../ThemeContext'
 import MobileMenu from './MobileMenu'
 import { AppContext } from './AppContext'
 import MyName from './MyName'
 import InstagramLogoIcon from './InstagramLogoIcon'; // Import the Instagram logo SVG component
 import GitHubLogoIcon from './GithubLogoIcon'; // Import the GitHub logo SVG component
 import { Transition } from '@headlessui/react'
-import SignUpForm from './SignUpForm'
 
 const Dashboard = () => {
   const context = useContext(AppContext);
@@ -27,7 +24,6 @@ const Dashboard = () => {
         <div className='flex items-center flex-col gap-10'>
           <div className='flex flex-col gap-2'>
             <MainTitle className="text-white uppercase ">Achieve universal excellence!</MainTitle>
-            <Tagline className="text-white uppercase">Life as you know it will never be the same!</Tagline>
           </div>
           <Button 
           onClick={() => context.setOpen(true)}
