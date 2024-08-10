@@ -4,13 +4,12 @@ import { NavLink } from 'react-router-dom';
 import { Transition } from '@headlessui/react';
 import OneToOneCoachingCall from './OneToOneCoachingCall';
 
-const MobileMenu = (props) => {
-    const [dropdownOpen, setDropdownOpen] = useState(false);
+const MobileMenu = () => {
     const context = useContext(AppContext);
 
 
     const handleDropdownClick = () => {
-            setDropdownOpen(prev => !prev)
+            context.setDropdownOpen(prev => !prev)
     }
 
     return (
@@ -34,19 +33,19 @@ const MobileMenu = (props) => {
                         </button>
                     </li>
                     {context.router && context.router.map(route => (
-                        <>
-                        <li key={route.id} className={` border-b rounded-xl hover:bg-[#00df9a] duration-300 hover:text-black cursor-pointer border-gray-600
+                        <React.Fragment key={route.id}>
+                        <li className={` border-b rounded-xl hover:bg-[#00df9a] duration-300 hover:text-black cursor-pointer border-gray-600
                             ${context.hoverUnderlineColor === route.id ? 'border-r-white' : 'border-r-transparent'}`}>
                             <NavLink to={`/${route.page === "Coaching" ? "" : route.page}`} onClick={() => handleDropdownClick(route.id)} 
                                 className="flex gap-3 rounded-xl  p-4 justify-self-center text-[14px] font-barlowCondensed">
                                 <span className='font-bold'>{route.order}</span>
                                 {route.page} 
-                                {route.page === "Coaching" ? <span className={`transition-transform duration-700 ${dropdownOpen ? 'rotate-180' : 'rotate-0'}`}>{"▼"}</span> : ""}
+                                {route.page === "Coaching" ? <span className={`transition-transform duration-700 ${context.dropdownOpen ? 'rotate-180' : 'rotate-0'}`}>{"▼"}</span> : ""}
                             </NavLink>
                         </li>
-                        <li className={`${dropdownOpen}`}>
+                        <li className={`${context.dropdownOpen}`}>
                         <Transition
-                                show={dropdownOpen && route.page === "Coaching"}
+                                show={context.dropdownOpen && route.page === "Coaching"}
                                 enter="transition-all duration-300 ease-in-out"
                                 enterFrom="opacity-0 max-h-0"
                                 enterTo="opacity-100 max-h-[500px]"
@@ -59,7 +58,7 @@ const MobileMenu = (props) => {
                             </div>
                         </Transition>
                         </li>
-                        </>
+                        </React.Fragment>
                     ))}
                 </ul>
             </div>

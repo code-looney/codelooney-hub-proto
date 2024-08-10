@@ -16,6 +16,7 @@ function AppProvider({ children }) {
     const [email, setEmail] = useState('');
     const [option, setOption] = useState('');
     const [open, setOpen] = useState(false)
+    const [dropdownOpen, setDropdownOpen] = useState(false);
     const instagramUsername = 'codelooney';
 
     // useEffect(() => {
@@ -51,6 +52,11 @@ function AppProvider({ children }) {
                 setPageOrder(data.navigation.order);
             });
     }, []);
+
+    const handleDropdownClick = () => {
+      setDropdownOpen(prev => !prev)
+}
+
 
     const handleNavLinkHover = (id) => {
         setHoverUnderlineColor(id);
@@ -108,6 +114,9 @@ function AppProvider({ children }) {
         handleInstagramClick,
         handleSubmit,
         handleEmailChange,
+        handleDropdownClick,
+        dropdownOpen,
+        setDropdownOpen,
         toggleMobileMenuIcons: toggleMobileMenu ? "close" : "hamburger" // Derived state
     };
 
