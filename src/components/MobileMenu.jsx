@@ -24,7 +24,7 @@ const MobileMenu = () => {
             ${context.toggleMobileMenu === false ? `transition transform duration-700 ease-in-out translate-x-0 opacity-100` : "" }
              text-white backdrop-blur-xl z-40`}
         >
-            <div         className={`flex-col md:hidden fixed right-0 py-7 top-0 w-[50%] h-full border-l border-l-gray-900 bg-[#0000001f] ease-in-out duration-500
+            <div  className={`flex-col md:hidden fixed right-0 py-7 top-0 w-[50%] h-full border-l border-l-gray-900 bg-[#0000001f] ease-in-out duration-500
             ${context.toggleMobileMenu === false ? `transition transform duration-700 ease-in-out translate-x-0 opacity-100` : "" }
              text-white backdrop-blur-xl z-40`}>
                 <ul className="flex flex-col h-full">
