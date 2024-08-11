@@ -3,8 +3,9 @@ import { AppContext } from './AppContext';
 import { Link, NavLink } from 'react-router-dom';
 import { Transition } from '@headlessui/react';
 
-const Header = (props) => {
+const Header = () => {
     const context = useContext(AppContext);
+    console.log(context.dropdownOpen);
 
     return (
         <header className='w-full flex justify-between items-center tracking-widest relative py-7'>
@@ -22,24 +23,27 @@ const Header = (props) => {
             <ul className='hidden md:flex md:pr-[1rem] w-full justify-end'>
                 {context.router && context.router.map(item => (
                     <React.Fragment key={item.id}>
-                        <li className={`${item.page === "1 to one call" ? "hidden" : item.page}`}>
+                        <li className={`${item.page === "1 to one coaching call" ? "hidden" : item.page} relative`}>
                             <ul>
                                 <li className='relative'>
                                     <div
-                                        className=' hover:bg-[#00df9a] text-white rounded-xl cursor-pointer duration-300 hover:text-black flex items-center'
+                                        className='hover:bg-[#00df9a] text-white rounded-xl cursor-pointer duration-300 hover:text-black flex items-center'
                                         onClick={() => item.page === "Coaching" && context.handleDropdownClick(item.id)}
                                     >
-                                        <NavLink className="p-4" to={item.path}>{item.page}
-                                        {item.page === "Coaching" && (
-                                            <span className={`transition-transform duration-700 ml-2 ${context.dropdownOpen ? 'rotate-180' : 'rotate-0'}`}>
-                                                {"▼"}
-                                            </span>
-                                        )}
+                                        <NavLink className="p-4 flex items-center w-full" to={item.path}>
+                                            {item.page}
+                                            {item.page === "Coaching" && (
+                                                <span className={`transition-transform duration-300 ml-2 
+                                                ${context.dropdownOpen ? 'rotate-180' : 'rotate-0'} inline-block transform`}
+                                                >
+                                                    {"▼"}
+                                                </span>
+                                            )}
                                         </NavLink>
                                     </div>
                                 </li>
                                 {item.page === "Coaching" && (
-                                    <li className={`${context.dropdownOpen ? 'block' : 'hidden'} rounded-xl text-white absolute`}>
+                                    <li className={`${context.dropdownOpen} rounded-xl text-white absolute top-full left-0 w-full`}>
                                         <Transition
                                             show={context.dropdownOpen}
                                             enter="transition-all duration-300 ease-in-out"
@@ -49,9 +53,9 @@ const Header = (props) => {
                                             leaveFrom="opacity-100 max-h-[500px]"
                                             leaveTo="opacity-0 max-h-0"
                                         >
-                                            <div className="flex justify-center">
-                                                <NavLink to="/one-to-one-coaching-call" className="block border border-1 border-gray-600 rounded-xl p-4 text-[14px] font-barlowCondensed hover:bg-[#00df9a] hover:text-black duration-300">
-                                                    1 To 1 Coaching Call
+                                            <div className="flex justify-center absolute">
+                                                <NavLink to="/one-to-one-coaching-call" className="block border border-1 border-gray-600 rounded-xl p-4 text-[14px] font-barlowCondensed hover:bg-[#00df9a] hover:text-black duration-300 w-full text-center">
+                                                   <span>1 to one call</span>
                                                 </NavLink>
                                             </div>
                                         </Transition>

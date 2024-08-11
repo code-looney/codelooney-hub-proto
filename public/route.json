@@ -12,11 +12,6 @@
             "id": 2
         },
         {
-            "page": "1 to one call",
-            "path": "/one-to-one-coaching-call"
-
-        },
-        {
             "page": "Projects",
             "order": "02",
             "id": 3,
