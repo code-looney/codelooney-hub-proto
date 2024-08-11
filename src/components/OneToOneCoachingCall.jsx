@@ -14,7 +14,7 @@ const OneToOneCoachingCall = () => {
         <div className='bg-gray-800 text-green-100 rounded-lg shadow-lg max-w-4xl w-full flex flex-col md:flex-row'>
           <div className='relative w-full md:w-1/2'>
             <img
-              src="public/images/IMG_0192.jpeg"
+              src="/images/IMG_0192.jpeg"
               alt="Coaching Call"
               className='w-full h-[500px] object-cover rounded-t-lg md:rounded-l-lg md:rounded-tr-none'
             />
