@@ -3,26 +3,31 @@
         {
             "page": "Start here",
             "order": "00",
-            "id": 1
+            "id": 1,
+            "path": "/"
         },
         {
             "page": "Coaching",
             "order": "01",
-            "id": 2,
-            "dropdown": {
-                "page": "1 to one call"
-            }
+            "id": 2
+        },
+        {
+            "page": "1 to one call",
+            "path": "/one-to-one-coaching-call"
+
         },
         {
             "page": "Projects",
             "order": "02",
-            "id": 3
+            "id": 3,
+            "path": "/projects"
 
         },
         {
             "page": "Contact",
             "order": "03",
-            "id": 4 
+            "id": 4,
+            "path": "/contact"
         }
     ]
 

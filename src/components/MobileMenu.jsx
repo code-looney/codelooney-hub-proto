@@ -34,9 +34,9 @@ const MobileMenu = () => {
                     </li>
                     {context.router && context.router.map(route => (
                         <React.Fragment key={route.id}>
-                        <li className={` border-b rounded-xl hover:bg-[#00df9a] duration-300 hover:text-black cursor-pointer border-gray-600
+                        <li className={`border-b rounded-xl hover:bg-[#00df9a] duration-300 hover:text-black cursor-pointer border-gray-600
                             ${context.hoverUnderlineColor === route.id ? 'border-r-white' : 'border-r-transparent'}`}>
-                            <NavLink to={`/${route.page === "Coaching" ? "" : route.page}`} onClick={() => handleDropdownClick(route.id)} 
+                            <NavLink onClick={() => handleDropdownClick(route.id)} 
                                 className="flex gap-3 rounded-xl  p-4 justify-self-center text-[14px] font-barlowCondensed">
                                 <span className='font-bold'>{route.order}</span>
                                 {route.page} 
@@ -54,7 +54,8 @@ const MobileMenu = () => {
                                 leaveTo="opacity-0 max-h-0"
                                     >
                             <div className={`${route.page === "Coaching" ? "flex justify-center" : null}`}>
-                                <NavLink className="block rounded-xl p-4 text-[14px] font-barlowCondensed hover:bg-[#00df9a] hover:text-black duration-300" to={`/${route.page === "Coaching" ? "1-to-one-coaching-call" : null}`}>{route.page === "Coaching" ? "1 To 1 Coaching Call" : null}</NavLink>
+                                <NavLink className="block rounded-xl border border-gray-600 w-full ml-5  p-4 text-[14px] font-barlowCondensed hover:bg-[#00df9a] hover:text-black duration-300"
+                                >{route.page === "Coaching" ? "1 To 1 Coaching Call" : null}</NavLink>
                             </div>
                         </Transition>
                         </li>
