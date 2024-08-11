@@ -13,7 +13,7 @@ import OneToOneCoachingCall from "./components/OneToOneCoachingCall.jsx";
 export default function App() {
   const context = useContext(ThemeContext);
   const [open, setOpen] = useState(false)
-  const isUnderConstruction = true;
+  const isUnderConstruction = false;
 
 
   const {get, loading} = useFetch(`/`);
