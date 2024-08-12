@@ -97,23 +97,23 @@ const CheckoutPage = () => {
       <main className='flex flex-col items-center justify-center flex-1 p-6'>
         <div className='bg-gray-800 text-green-100 rounded-lg shadow-lg max-w-4xl w-full'>
           <div className='p-6'>
-            <h1 className='text-3xl font-extrabold mb-4'>Checkout</h1>
-            <p className='text-gray-300 mb-6'>
+            <h1 className='text-3xl font-extrabold mb-4 text-center'>Checkout</h1>
+            <p className='text-gray-300 mb-6 text-center'>
               Please review your order details below and select your preferred payment method.
             </p>
 
             {/* Payment Method Selection */}
-            <div className='flex space-x-4 mb-6'>
+            <div className='flex flex-col md:flex-row md:space-x-4 mb-6'>
               {['creditCard', 'paypal', 'ideal'].map(method => (
                 <div
                   key={method}
-                  className={`cursor-pointer w-1/3 p-4 rounded-lg border border-gray-700 hover:border-green-500 transition duration-300 ${
+                  className={`cursor-pointer flex-1 p-4 rounded-lg border border-gray-700 hover:border-green-500 transition duration-300 mb-4 md:mb-0 ${
                     paymentMethod === method ? 'bg-gray-900 border-green-500' : 'bg-gray-800'
                   }`}
                   onClick={() => handlePaymentMethodChange(method)}
                 >
-                  <h2 className='text-xl font-bold mb-2 text-gray-100'>{method === 'creditCard' ? 'Credit Card' : method === 'paypal' ? 'PayPal' : 'iDEAL'}</h2>
-                  <p className='text-gray-300'>
+                  <h2 className='text-xl font-bold mb-2 text-gray-100 text-center'>{method === 'creditCard' ? 'Credit Card' : method === 'paypal' ? 'PayPal' : 'iDEAL'}</h2>
+                  <p className='text-gray-300 text-center'>
                     {method === 'creditCard' && 'Pay with your credit or debit card.'}
                     {method === 'paypal' && 'Pay with PayPal, the world\'s leading payment gateway.'}
                     {method === 'ideal' && 'Pay using iDEAL, your preferred bank.'}
@@ -124,10 +124,10 @@ const CheckoutPage = () => {
 
             {/* Order Summary */}
             <div className='bg-gray-900 p-6 rounded-lg mb-6'>
-              <h2 className='text-2xl font-bold mb-4'>Order Summary</h2>
+              <h2 className='text-2xl font-bold mb-4 text-center'>Order Summary</h2>
               <p className='text-gray-300 mb-2'><strong>Product:</strong> 1-to-1 Coaching Call with Daneel</p>
               <p className='text-gray-300 mb-2'><strong>Duration:</strong> 2 Hours</p>
-              <p className='text-gray-300 mb-4'><strong>Price:</strong> $299</p>
+              <p className='text-gray-300 mb-4'><strong>Price:</strong> $200</p>
             </div>
 
             {/* Payment Forms */}
@@ -170,7 +170,7 @@ const CheckoutPage = () => {
                   />
                 </label>
 
-                <div className='flex space-x-4 mb-4'>
+                <div className='flex flex-col md:flex-row md:space-x-4 mb-4'>
                   <label className='flex-1'>
                     <span className='text-gray-300'>Expiry Date</span>
                     <input
@@ -213,7 +213,7 @@ const CheckoutPage = () => {
 
                 <button
                   type='submit'
-                  className='bg-green-600 text-black py-3 px-6 rounded-lg shadow-lg hover:bg-green-700 transition duration-300'
+                  className='bg-green-600 text-black py-3 px-6 rounded-lg shadow-lg hover:bg-green-700 transition duration-300 w-full'
                 >
                   Complete Purchase
                 </button>
@@ -221,29 +221,13 @@ const CheckoutPage = () => {
             )}
 
             {paymentMethod === 'paypal' && (
-              <div className='mt-6'>
-                <div id='paypal-button-container'></div>
-                {/* Terms and Conditions Checkbox for PayPal */}
-                <div className='flex items-center mt-6'>
-                  <input
-                    type='checkbox'
-                    id='terms-paypal'
-                    checked={acceptedTerms}
-                    onChange={handleTermsChange}
-                    className='mr-2'
-                    required
-                  />
-                  <label htmlFor='terms-paypal' className='text-gray-300'>
-                    I accept the <a href="/terms-of-service" className='text-green-400 hover:underline'>Terms of Service</a> and <a href="/privacy-policy" className='text-green-400 hover:underline'>Privacy Policy</a>.
-                  </label>
-                </div>
-              </div>
+              <div id='paypal-button-container' className='mt-6 w-full'></div>
             )}
 
             {paymentMethod === 'ideal' && (
-              <div className='mt-6'>
+              <div className='mt-6 text-center'>
                 <h2 className='text-2xl font-bold mb-4'>iDEAL Payment</h2>
-                <p className='text-gray-300'>You will be redirected to your bank's payment page.</p>
+                <p className='text-gray-300 mb-4'>You will be redirected to your bank's payment page.</p>
                 <button
                   onClick={handleSubmit}
                   className='bg-green-600 text-black py-3 px-6 rounded-lg shadow-lg hover:bg-green-700 transition duration-300'
@@ -251,7 +235,7 @@ const CheckoutPage = () => {
                   Proceed with iDEAL
                 </button>
                 {/* Terms and Conditions Checkbox for iDEAL */}
-                <div className='flex items-center mt-6'>
+                <div className='flex items-center justify-center mt-6'>
                   <input
                     type='checkbox'
                     id='terms-ideal'
