@@ -1,32 +1,45 @@
-import React, { useContext } from 'react';
+import React, { useContext, useRef, useEffect } from 'react';
 import { AppContext } from './AppContext';
 import { NavLink } from 'react-router-dom';
 import { Transition } from '@headlessui/react';
 
 const MobileMenu = () => {
     const context = useContext(AppContext);
+    const menuRef = useRef(null);
 
     const handleDropdownClick = (id) => {
         context.setDropdownOpen(prev => (prev === id ? null : id));
     };
 
+    const handleClickOutside = (event) => {
+        if (menuRef.current && !menuRef.current.contains(event.target)) {
+            context.handleToggleMobileMenu();
+        }
+    };
+
+    useEffect(() => {
+        if (context.toggleMobileMenu) {
+            document.addEventListener('mousedown', handleClickOutside);
+        } else {
+            document.removeEventListener('mousedown', handleClickOutside);
+        }
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, [context.toggleMobileMenu]);
+
     return (
         <Transition
-        show={context.toggleMobileMenu}
-        enter="transition-transform duration-700 ease-in-out"
-        enterFrom="transform translate-x-full opacity-0"
-        enterTo="transform translate-x-0 opacity-100"
-        leave="transition-transform duration-700 ease-in-out"
-        leaveFrom="transform translate-x-0 opacity-100"
-        leaveTo="transform translate-x-full opacity-0"
-
-        className={`flex-col md:hidden fixed right-0 py-7 top-0 w-[50%] h-full border-l border-l-gray-900 bg-[#0000008a] ease-in-out duration-500
-            ${context.toggleMobileMenu === false ? `transition transform duration-700 ease-in-out translate-x-0 opacity-100` : "" }
-             text-white backdrop-blur-xl z-40`}
+            show={context.toggleMobileMenu}
+            enter="transition-transform duration-700 ease-in-out"
+            enterFrom="transform translate-x-full opacity-0"
+            enterTo="transform translate-x-0 opacity-100"
+            leave="transition-transform duration-700 ease-in-out"
+            leaveFrom="transform translate-x-0 opacity-100"
+            leaveTo="transform translate-x-full opacity-0"
+            className={`flex-col md:hidden fixed right-0 py-7 top-0 w-[50%] h-full border-l border-l-gray-900 bg-[#0000008a] ease-in-out duration-500 text-white backdrop-blur-xl z-40`}
         >
-            <div  className={`flex-col md:hidden fixed right-0 py-7 top-0 w-[50%] h-full border-l border-l-gray-900 bg-[#0000001f] ease-in-out duration-500
-            ${context.toggleMobileMenu === false ? `transition transform duration-700 ease-in-out translate-x-0 opacity-100` : "" }
-             text-white backdrop-blur-xl z-40`}>
+            <div ref={menuRef} className={`flex-col md:hidden fixed right-0 py-7 top-0 w-[50%] h-full border-l border-l-gray-900 bg-[#0000001f] ease-in-out duration-500 text-white backdrop-blur-xl z-40`}>
                 <ul className="flex flex-col h-full">
                     <li className='flex justify-end items-center p-4'>
                         <button aria-expanded={context.toggleMobileMenu} onClick={context.handleToggleMobileMenu}>
