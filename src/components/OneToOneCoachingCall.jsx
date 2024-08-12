@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import Header from './Header';
 import MobileMenu from './MobileMenu';
 import { AppContext } from './AppContext';
+import { Link } from 'react-router-dom';
 
 const OneToOneCoachingCall = () => {
   const context = useContext(AppContext);
@@ -25,12 +26,12 @@ const OneToOneCoachingCall = () => {
             <p className='text-gray-300 mb-6'>
               Engage in a 2-hour confidential coaching session with Daneel. This personalized consultation offers dedicated time to address your goals, receive expert advice, and gain insights tailored to your needs. Whether you're seeking career advice or personal growth, this session is designed to provide the focus and expertise you need.
             </p>
-            <a
-              href="#"
+            <Link
+              to="/checkout"
               className='bg-green-600 text-black text-center py-3 rounded-lg shadow-lg hover:bg-green-700 transition duration-300'
             >
               Book Your Session
-            </a>
+            </Link>
             <div className='mt-6 text-center text-gray-400 text-sm'>
               <a href="/terms-of-service" className='hover:underline'>Terms of Service</a> | 
               <a href="/privacy-policy" className='hover:underline ml-2'>Privacy Policy</a>
