@@ -39,6 +39,7 @@ const CheckoutPage = () => {
     expiryDate: '',
     cvv: '',
   });
+  const [acceptedTerms, setAcceptedTerms] = useState(false);
 
   const handlePaymentMethodChange = (method) => {
     setPaymentMethod(method);
@@ -52,8 +53,16 @@ const CheckoutPage = () => {
     });
   };
 
+  const handleTermsChange = (e) => {
+    setAcceptedTerms(e.target.checked);
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!acceptedTerms) {
+      alert('You must accept the Terms of Service and Privacy Policy to proceed.');
+      return;
+    }
     if (paymentMethod === 'ideal') {
       await processIdealPayment();
     } else if (paymentMethod === 'creditCard') {
@@ -118,7 +127,7 @@ const CheckoutPage = () => {
               <h2 className='text-2xl font-bold mb-4'>Order Summary</h2>
               <p className='text-gray-300 mb-2'><strong>Product:</strong> 1-to-1 Coaching Call with Daneel</p>
               <p className='text-gray-300 mb-2'><strong>Duration:</strong> 2 Hours</p>
-              <p className='text-gray-300 mb-4'><strong>Price:</strong> $200</p>
+              <p className='text-gray-300 mb-4'><strong>Price:</strong> $299</p>
             </div>
 
             {/* Payment Forms */}
@@ -187,6 +196,21 @@ const CheckoutPage = () => {
                   </label>
                 </div>
 
+                {/* Terms and Conditions Checkbox */}
+                <div className='flex items-center mb-4'>
+                  <input
+                    type='checkbox'
+                    id='terms'
+                    checked={acceptedTerms}
+                    onChange={handleTermsChange}
+                    className='mr-2'
+                    required
+                  />
+                  <label htmlFor='terms' className='text-gray-300'>
+                    I accept the <a href="/terms-of-service" className='text-green-400 hover:underline'>Terms of Service</a> and <a href="/privacy-policy" className='text-green-400 hover:underline'>Privacy Policy</a>.
+                  </label>
+                </div>
+
                 <button
                   type='submit'
                   className='bg-green-600 text-black py-3 px-6 rounded-lg shadow-lg hover:bg-green-700 transition duration-300'
@@ -197,7 +221,23 @@ const CheckoutPage = () => {
             )}
 
             {paymentMethod === 'paypal' && (
-              <div id='paypal-button-container' className='mt-6'></div>
+              <div className='mt-6'>
+                <div id='paypal-button-container'></div>
+                {/* Terms and Conditions Checkbox for PayPal */}
+                <div className='flex items-center mt-6'>
+                  <input
+                    type='checkbox'
+                    id='terms-paypal'
+                    checked={acceptedTerms}
+                    onChange={handleTermsChange}
+                    className='mr-2'
+                    required
+                  />
+                  <label htmlFor='terms-paypal' className='text-gray-300'>
+                    I accept the <a href="/terms-of-service" className='text-green-400 hover:underline'>Terms of Service</a> and <a href="/privacy-policy" className='text-green-400 hover:underline'>Privacy Policy</a>.
+                  </label>
+                </div>
+              </div>
             )}
 
             {paymentMethod === 'ideal' && (
@@ -210,6 +250,20 @@ const CheckoutPage = () => {
                 >
                   Proceed with iDEAL
                 </button>
+                {/* Terms and Conditions Checkbox for iDEAL */}
+                <div className='flex items-center mt-6'>
+                  <input
+                    type='checkbox'
+                    id='terms-ideal'
+                    checked={acceptedTerms}
+                    onChange={handleTermsChange}
+                    className='mr-2'
+                    required
+                  />
+                  <label htmlFor='terms-ideal' className='text-gray-300'>
+                    I accept the <a href="/terms-of-service" className='text-green-400 hover:underline'>Terms of Service</a> and <a href="/privacy-policy" className='text-green-400 hover:underline'>Privacy Policy</a>.
+                  </label>
+                </div>
               </div>
             )}
           </div>
