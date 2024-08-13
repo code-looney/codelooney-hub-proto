@@ -10,11 +10,12 @@ import StartHere from "./components/StartHere.jsx";
 import Projects from "./components/Projects.jsx";
 import OneToOneCoachingCall from "./components/OneToOneCoachingCall.jsx";
 import CheckoutPage from "./components/CheckoutPage.jsx";
+import PrivacyNotice from "./components/PrivacyNotice.jsx";
 
 export default function App() {
   const context = useContext(ThemeContext);
   const [open, setOpen] = useState(false)
-  const isUnderConstruction = true;
+  const isUnderConstruction = false;
 
 
   const {get, loading} = useFetch(`/`);
@@ -41,6 +42,7 @@ export default function App() {
             <Route path="/checkout" element={<CheckoutPage />}></Route>
             <Route path="/projects"  element={<Projects />}></Route>
             <Route path="/contact"  element={<Contact />}></Route>
+            <Route path="/privacy-notice"  element={<PrivacyNotice />}></Route>
           </Routes>
           {/* Portal should not be visible */}
           {/* testing */}
