@@ -20,16 +20,16 @@ const processIdealPayment = async () => {
   }
 };
 
-const loadPayPalScript = (clientId) => {
-  return new Promise((resolve, reject) => {
-    const script = document.createElement('script');
-    script.src = `https://www.paypal.com/sdk/js?client-id=${clientId}`;
-    // script.src = ``; //test
-    script.onload = () => resolve(window.paypal);
-    script.onerror = () => reject(new Error('PayPal SDK failed to load'));
-    document.body.appendChild(script);
-  });
-};
+// const loadPayPalScript = (clientId) => {
+//   return new Promise((resolve, reject) => {
+//     const script = document.createElement('script');
+//     script.src = `https://www.paypal.com/sdk/js?client-id=${clientId}`;
+//     // script.src = ``; //test
+//     script.onload = () => resolve(window.paypal);
+//     script.onerror = () => reject(new Error('PayPal SDK failed to load'));
+//     document.body.appendChild(script);
+//   });
+// };
 
 const CheckoutPage = () => {
   // Set PayPal as the default payment method
@@ -90,24 +90,24 @@ const CheckoutPage = () => {
     }
   };
 
-  useEffect(() => {
-    if (paymentMethod === 'paypal' ) {
-      loadPayPalScript('YOUR_CLIENT_ID').then(paypal => {
-        paypal.Buttons({
-          createOrder: function(data, actions) {
-            return actions.order.create({
-              purchase_units: [{ amount: { value: '299.00' } }]
-            });
-          },
-          onApprove: function(data, actions) {
-            return actions.order.capture().then(function(details) {
-              alert('Transaction completed by ' + details.payer.name.given_name);
-            });
-          }
-        }).render('#paypal-button-container');
-      }).catch(err => console.error(err));
-    }
-  }, [paymentMethod]);
+  // useEffect(() => {
+  //   if (paymentMethod === 'paypal' ) {
+  //     loadPayPalScript('YOUR_CLIENT_ID').then(paypal => {
+  //       paypal.Buttons({
+  //         createOrder: function(data, actions) {
+  //           return actions.order.create({
+  //             purchase_units: [{ amount: { value: '299.00' } }]
+  //           });
+  //         },
+  //         onApprove: function(data, actions) {
+  //           return actions.order.capture().then(function(details) {
+  //             alert('Transaction completed by ' + details.payer.name.given_name);
+  //           });
+  //         }
+  //       }).render('#paypal-button-container');
+  //     }).catch(err => console.error(err));
+  //   }
+  // }, [paymentMethod]);
 
   // Dummy availability states for demonstration
   const isIdealAvailable = false;
