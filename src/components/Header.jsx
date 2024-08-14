@@ -23,7 +23,7 @@ const Header = () => {
                 </Link>
             </div>
             <div className='w-[187.5px] flex justify-end items-center right-0 top-0 pr-[1.5rem] md:hidden'>
-                <Link onClick={context.handleToggleMobileMenu}>
+                <Link to="/" onClick={context.handleToggleMobileMenu}>
                     <img src="/images/icon-hamburger.svg" alt="hamburger open icon" />
                 </Link>
             </div>
@@ -35,7 +35,7 @@ const Header = () => {
                             <ul>
                                 <li
                                     className='relative group'
-                                    onMouseEnter={handleMouseEnter}
+                                    onMouseEnter={item.page === "Coaching"? handleMouseEnter : false}
                                     onMouseLeave={handleMouseLeave}
                                 >
                                     <div
