@@ -8,7 +8,7 @@ const Header = () => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
     const handleMouseEnter = () => {
-        setIsDropdownOpen(true);
+        setIsDropdownOpen(true)
     };
 
     const handleMouseLeave = () => {
@@ -35,7 +35,7 @@ const Header = () => {
                             <ul>
                                 <li
                                     className='relative group'
-                                    onMouseEnter={item.page === "Coaching"? handleMouseEnter : false}
+                                    onMouseEnter={handleMouseEnter}
                                     onMouseLeave={handleMouseLeave}
                                 >
                                     <div
@@ -63,7 +63,8 @@ const Header = () => {
                                             leaveTo="opacity-0"
                                         >
                                             <div className='absolute top-full left-0 w-full bg-gray-800 rounded-xl'>
-                                                <NavLink to="/one-to-one-coaching-call" className="block border border-1 border-gray-600 rounded-xl p-4 text-[14px] font-barlowCondensed hover:bg-[#00df9a] hover:text-black duration-300 text-center">
+                                                <NavLink to="/one-to-one-coaching-call" 
+                                                className="block border border-1 border-gray-600 rounded-xl p-4 text-[14px] font-barlowCondensed hover:bg-[#00df9a] hover:text-black duration-300 text-center">
                                                     1 to one call
                                                 </NavLink>
                                             </div>

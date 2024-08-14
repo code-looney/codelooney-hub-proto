@@ -24,6 +24,7 @@ const loadPayPalScript = (clientId) => {
   return new Promise((resolve, reject) => {
     const script = document.createElement('script');
     script.src = `https://www.paypal.com/sdk/js?client-id=${clientId}`;
+    // script.src = ``; //test
     script.onload = () => resolve(window.paypal);
     script.onerror = () => reject(new Error('PayPal SDK failed to load'));
     document.body.appendChild(script);
@@ -56,8 +57,8 @@ const CheckoutPage = () => {
       alert('Credit card payment is currently unavailable.');
       return;
     }
-    if (method === 'paypal' && unavailableMethods.creditCard) {
-      alert('Credit card payment is currently unavailable.');
+    if (method === 'paypal' && unavailableMethods.paypal) {
+      alert('Paypal payment is currently unavailable.');
       return;
     }
     setPaymentMethod(method);
@@ -95,7 +96,7 @@ const CheckoutPage = () => {
         paypal.Buttons({
           createOrder: function(data, actions) {
             return actions.order.create({
-              purchase_units: [{ amount: { value: '200.00' } }]
+              purchase_units: [{ amount: { value: '299.00' } }]
             });
           },
           onApprove: function(data, actions) {
@@ -118,7 +119,7 @@ const CheckoutPage = () => {
     setUnavailableMethods({
       ideal: !isIdealAvailable,
       creditCard: !isCreditCardAvailable,
-      paypal: !isPaypalCardAvailable
+      paypal: isPaypalCardAvailable
     });
   }, [isIdealAvailable, isCreditCardAvailable, isPaypalCardAvailable]);
 
@@ -135,19 +136,19 @@ const CheckoutPage = () => {
             </p>
 
             {/* Payment Method Selection */}
-            <div className='relative flex flex-col md:flex-row md:space-x-4 mb-6'>
+            <div className='relative flex flex-col md:flex-row md:space-x-4 mb-6 '>
               {['creditCard', 'paypal', 'ideal'].map(method => (
-                <div
+                <button 
                   key={method}
                   className={`relative cursor-pointer flex-1 p-4 rounded-lg border border-gray-700 hover:border-green-500 transition duration-300 mb-4 md:mb-0 ${
                     paymentMethod === method ? 'bg-gray-900 border-green-500' : 'bg-gray-800'
                   } ${unavailableMethods[method] ? 'opacity-50 cursor-not-allowed' : ''}`}
-                  onClick={() => handlePaymentMethodChange(method)}
+                  onClick={() => method === "paypal" ? window.location.href = "https://www.paypal.com/ncp/payment/EH5ZPSALUE3SQ" : false}
                 >
                   <h2 className='text-xl font-bold mb-2 text-gray-100 text-center'>
                     {method === 'creditCard' ? 'Credit Card' : method === 'paypal' ? 'PayPal' : 'iDEAL'}
                   </h2>
-                  <p className='text-gray-300 text-center'>
+                  <p className='text-gray-300 text-center out'>
                     {method === 'creditCard' && 'Pay with your credit or debit card.'}
                     {method === 'paypal' && 'Pay with PayPal, the world\'s leading payment gateway.'}
                     {method === 'ideal' && 'Pay using iDEAL, your preferred bank.'}
@@ -159,7 +160,7 @@ const CheckoutPage = () => {
                       </svg>
                     </div>
                   )}
-                </div>
+                </button>
               ))}
             </div>
 
