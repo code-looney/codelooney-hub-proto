@@ -168,7 +168,7 @@ const CheckoutPage = () => {
             <div className='bg-gray-900 p-6 rounded-lg mb-6'>
               {Object.values(unavailableMethods).includes(true) && (
                 <p className='text-red-500 text-center mb-4'>
-                  Payment methods are currently unavailable. Complete the registration form here  <a href="/" className='text-green-400 hover:underline'>Register</a>.
+                  Some payment methods are currently unavailable. If you need assistance, please  <a href="/contact" className='text-green-400 hover:underline'>Contact</a>
                 </p>
               )}
             </div>
