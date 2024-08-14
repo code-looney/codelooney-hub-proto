@@ -7,8 +7,10 @@ const Header = () => {
     const context = useContext(AppContext);
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-    const handleMouseEnter = () => {
-        setIsDropdownOpen(true)
+    const handleMouseEnter = (id) => {
+        if (id === 2) {
+            setIsDropdownOpen(true)
+        }
     };
 
     const handleMouseLeave = () => {
@@ -35,7 +37,7 @@ const Header = () => {
                             <ul>
                                 <li
                                     className='relative group'
-                                    onMouseEnter={handleMouseEnter}
+                                    onMouseEnter={() => handleMouseEnter(item.id)}
                                     onMouseLeave={handleMouseLeave}
                                 >
                                     <div
