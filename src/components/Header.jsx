@@ -18,12 +18,12 @@ const Header = () => {
     return (
         <header className='w-full flex justify-between items-center tracking-widest relative py-7'>
             <div className='relative items-center z-10 pl-[1.5rem] md:pl-[2rem] flex'>
-                <Link className='w-full'>
+                <Link to="/" className='w-full'>
                     <img className='uppercase md:w-60 w-40 font-bold text-[#00df9a]' src="/images/Screenshot 2024-08-05 at 00-14-34 Code Looney.png" alt="logo" />
                 </Link>
             </div>
             <div className='w-[187.5px] flex justify-end items-center right-0 top-0 pr-[1.5rem] md:hidden'>
-                <Link to="/" onClick={context.handleToggleMobileMenu}>
+                <Link onClick={context.handleToggleMobileMenu}>
                     <img src="/images/icon-hamburger.svg" alt="hamburger open icon" />
                 </Link>
             </div>
