@@ -178,7 +178,7 @@ const CheckoutPage = () => {
               <h2 className='text-2xl font-bold mb-4 text-center'>Order Summary</h2>
               <p className='text-gray-300 mb-2'><strong>Product:</strong> 1-to-1 Coaching Call with Daneel</p>
               <p className='text-gray-300 mb-2'><strong>Duration:</strong> 2 Hours</p>
-              <p className='text-gray-300 mb-4'><strong>Price:</strong> $200</p>
+              <p className='text-gray-300 mb-4'><strong>Price:</strong> $299</p>
             </div>
 
             {/* Payment Forms */}
