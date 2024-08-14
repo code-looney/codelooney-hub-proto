@@ -8,7 +8,7 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        "portrait": "url(public/images/IMG_0263.jpeg)"
+        "portrait": "url(/images/IMG_0263.jpeg)"
       },
       
       colors: {
