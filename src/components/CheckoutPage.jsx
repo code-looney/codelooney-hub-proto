@@ -31,7 +31,8 @@ const loadPayPalScript = (clientId) => {
 };
 
 const CheckoutPage = () => {
-  const [paymentMethod, setPaymentMethod] = useState('creditCard');
+  // Set PayPal as the default payment method
+  const [paymentMethod, setPaymentMethod] = useState('paypal');
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -40,8 +41,25 @@ const CheckoutPage = () => {
     cvv: '',
   });
   const [acceptedTerms, setAcceptedTerms] = useState(false);
+  const [unavailableMethods, setUnavailableMethods] = useState({
+    ideal: false,
+    creditCard: false,
+    paypal: false
+  });
 
   const handlePaymentMethodChange = (method) => {
+    if (method === 'ideal' && unavailableMethods.ideal) {
+      alert('iDEAL payment is currently unavailable.');
+      return;
+    }
+    if (method === 'creditCard' && unavailableMethods.creditCard) {
+      alert('Credit card payment is currently unavailable.');
+      return;
+    }
+    if (method === 'paypal' && unavailableMethods.creditCard) {
+      alert('Credit card payment is currently unavailable.');
+      return;
+    }
     setPaymentMethod(method);
   };
 
@@ -72,7 +90,7 @@ const CheckoutPage = () => {
   };
 
   useEffect(() => {
-    if (paymentMethod === 'paypal') {
+    if (paymentMethod === 'paypal' ) {
       loadPayPalScript('YOUR_CLIENT_ID').then(paypal => {
         paypal.Buttons({
           createOrder: function(data, actions) {
@@ -90,6 +108,20 @@ const CheckoutPage = () => {
     }
   }, [paymentMethod]);
 
+  // Dummy availability states for demonstration
+  const isIdealAvailable = false;
+  const isCreditCardAvailable = false;
+  const isPaypalCardAvailable = false;
+
+  // Set unavailable methods based on availability
+  useEffect(() => {
+    setUnavailableMethods({
+      ideal: !isIdealAvailable,
+      creditCard: !isCreditCardAvailable,
+      paypal: !isPaypalCardAvailable
+    });
+  }, [isIdealAvailable, isCreditCardAvailable, isPaypalCardAvailable]);
+
   return (
     <div className='bg-black text-green-500 min-h-screen flex flex-col'>
       <Header />
@@ -103,23 +135,41 @@ const CheckoutPage = () => {
             </p>
 
             {/* Payment Method Selection */}
-            <div className='flex flex-col md:flex-row md:space-x-4 mb-6'>
+            <div className='relative flex flex-col md:flex-row md:space-x-4 mb-6'>
               {['creditCard', 'paypal', 'ideal'].map(method => (
                 <div
                   key={method}
-                  className={`cursor-pointer flex-1 p-4 rounded-lg border border-gray-700 hover:border-green-500 transition duration-300 mb-4 md:mb-0 ${
+                  className={`relative cursor-pointer flex-1 p-4 rounded-lg border border-gray-700 hover:border-green-500 transition duration-300 mb-4 md:mb-0 ${
                     paymentMethod === method ? 'bg-gray-900 border-green-500' : 'bg-gray-800'
-                  }`}
+                  } ${unavailableMethods[method] ? 'opacity-50 cursor-not-allowed' : ''}`}
                   onClick={() => handlePaymentMethodChange(method)}
                 >
-                  <h2 className='text-xl font-bold mb-2 text-gray-100 text-center'>{method === 'creditCard' ? 'Credit Card' : method === 'paypal' ? 'PayPal' : 'iDEAL'}</h2>
+                  <h2 className='text-xl font-bold mb-2 text-gray-100 text-center'>
+                    {method === 'creditCard' ? 'Credit Card' : method === 'paypal' ? 'PayPal' : 'iDEAL'}
+                  </h2>
                   <p className='text-gray-300 text-center'>
                     {method === 'creditCard' && 'Pay with your credit or debit card.'}
                     {method === 'paypal' && 'Pay with PayPal, the world\'s leading payment gateway.'}
                     {method === 'ideal' && 'Pay using iDEAL, your preferred bank.'}
                   </p>
+                  {unavailableMethods[method] && (
+                    <div className='absolute top-0 right-0 p-2 text-red-600'>
+                      <svg className='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+                        <path strokeLinecap='round' strokeLinejoin='round' strokeWidth='2' d='M6 18L18 6M6 6l12 12'></path>
+                      </svg>
+                    </div>
+                  )}
                 </div>
               ))}
+            </div>
+
+            {/* Unavailable Methods Notice */}
+            <div className='bg-gray-900 p-6 rounded-lg mb-6'>
+              {Object.values(unavailableMethods).includes(true) && (
+                <p className='text-red-500 text-center mb-4'>
+                  Payment methods are currently unavailable. Complete the registration form here  <a href="/" className='text-green-400 hover:underline'>Register</a>.
+                </p>
+              )}
             </div>
 
             {/* Order Summary */}
@@ -131,7 +181,7 @@ const CheckoutPage = () => {
             </div>
 
             {/* Payment Forms */}
-            {paymentMethod === 'creditCard' && (
+            {paymentMethod === 'creditCard' && isCreditCardAvailable && (
               <form onSubmit={handleSubmit} className='bg-gray-900 p-6 rounded-lg'>
                 <h2 className='text-2xl font-bold mb-4'>Credit Card Details</h2>
                 <label className='block mb-4'>
@@ -220,11 +270,11 @@ const CheckoutPage = () => {
               </form>
             )}
 
-            {paymentMethod === 'paypal' && (
+            {paymentMethod === 'paypal' && isPaypalCardAvailable && (
               <div id='paypal-button-container' className='mt-6 w-full'></div>
             )}
 
-            {paymentMethod === 'ideal' && (
+            {paymentMethod === 'ideal' && isIdealAvailable && (
               <div className='mt-6 text-center'>
                 <h2 className='text-2xl font-bold mb-4'>iDEAL Payment</h2>
                 <p className='text-gray-300 mb-4'>You will be redirected to your bank's payment page.</p>

@@ -18,6 +18,7 @@ function AppProvider({ children }) {
     const [open, setOpen] = useState(false)
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const instagramUsername = 'codelooney';
+    
 
     // useEffect(() => {
     //     fetch(`/routes.json`)
