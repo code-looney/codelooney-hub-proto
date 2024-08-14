@@ -255,9 +255,10 @@ const CheckoutPage = () => {
       </main>
       <footer className='bg-black py-4 text-center text-gray-400'>
         <p>&copy; {new Date().getFullYear()} Code Looney. All rights reserved.</p>
-        <div className='mt-2'>
-          <a href="/terms-of-service" className='hover:underline'>Terms of Service</a> | 
-          <a href="/privacy-policy" className='hover:underline ml-2'>Privacy Policy</a>
+        <div className='mt-2 flex items-center justify-center gap-2'>
+          <a href="/privacy-notice" className='hover:underline'>Privacy Notice</a>
+          <span>|</span>
+          <a href="/terms-of-service" className='hover:underline'>Terms of Service</a>
         </div>
       </footer>
     </div>

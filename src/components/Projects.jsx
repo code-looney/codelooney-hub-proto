@@ -96,6 +96,11 @@ const ProjectsPage = () => {
           </a>
         </div>
         <p>&copy; {new Date().getFullYear()} Code Looney. All rights reserved.</p>
+        <div className='mt-2 flex items-center justify-center gap-2'>
+          <a href="/privacy-notice" className='hover:underline'>Privacy Notice</a>
+          <span>|</span>
+          <a href="/terms-of-service" className='hover:underline'>Terms of Service</a>
+        </div>
       </footer>
     </div>
   );
