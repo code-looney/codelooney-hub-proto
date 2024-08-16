@@ -8,19 +8,13 @@ const ProjectsPage = () => {
 
   const projects = [
     {
-      title: 'Project One',
-      description: 'A detailed description of Project One that highlights its key features and technologies used. This project demonstrates skills in React, Node.js, and MongoDB.',
+      title: 'Space App',
+      description: 'Project developement still ongoing',
       url: 'https://github.com/code-looney/space-app.git',
       liveUrl: 'https://space-app-ten-iota.vercel.app/', // Add the live URL for the project
       image: '/images/Screenshot 2024-08-16 at 21-54-22 Space tourism.png',
     },
-    {
-      title: 'Project Two',
-      description: 'A comprehensive overview of Project Two showcasing its unique approach to problem-solving. Technologies used include Vue.js, Express, and PostgreSQL.',
-      url: 'https://github.com/code-looney/project-two',
-      liveUrl: 'https://project-two.vercel.app', // Add the live URL for the project
-      image: '/images/project-two.jpg',
-    },
+    
     // Add more projects as needed
   ];
 
