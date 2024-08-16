@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import Header from './Header';
 import MobileMenu from './MobileMenu';
+import { AppContext } from './AppContext';
+
 
 const Contact = () => {
     const [formData, setFormData] = useState({
@@ -12,6 +14,7 @@ const Contact = () => {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [successMessage, setSuccessMessage] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
+    const context = useContext(AppContext)
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -21,31 +24,31 @@ const Contact = () => {
         });
     };
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        setIsSubmitting(true);
-        setSuccessMessage('');
-        setErrorMessage('');
+    // const handleSubmit = async (e) => {
+    //     e.preventDefault();
+    //     setIsSubmitting(true);
+    //     setSuccessMessage('');
+    //     setErrorMessage('');
 
-        try {
-            const response = await fetch('/api/send-message', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(formData),
-            });
+    //     try {
+    //         const response = await fetch('/api/send-message', {
+    //             method: 'POST',
+    //             headers: { 'Content-Type': 'application/json' },
+    //             body: JSON.stringify(formData),
+    //         });
 
-            if (response.ok) {
-                setSuccessMessage('Your message has been sent successfully!');
-                setFormData({ name: '', email: '', message: '' });
-            } else {
-                setErrorMessage('Something went wrong. Please try again later.');
-            }
-        } catch (error) {
-            setErrorMessage('Something went wrong. Please try again later.');
-        } finally {
-            setIsSubmitting(false);
-        }
-    };
+    //         if (response.ok) {
+    //             setSuccessMessage('Your message has been sent successfully!');
+    //             setFormData({ name: '', email: '', message: '' });
+    //         } else {
+    //             setErrorMessage('Something went wrong. Please try again later.');
+    //         }
+    //     } catch (error) {
+    //         setErrorMessage('Something went wrong. Please try again later.');
+    //     } finally {
+    //         setIsSubmitting(false);
+    //     }
+    // };
 
     return (
         <div className='bg-black text-green-500 min-h-screen flex flex-col'>
@@ -60,7 +63,7 @@ const Contact = () => {
                         </p>
 
                         {/* Contact Form */}
-                        <form onSubmit={handleSubmit} className='bg-gray-900 p-6 rounded-lg'>
+                        <form onSubmit={context.handleSubmit} className='bg-gray-900 p-6 rounded-lg'>
                             <div className='mb-4'>
                                 <label className='block mb-2 text-gray-300'>
                                     Full Name
@@ -112,10 +115,10 @@ const Contact = () => {
 
                             <button
                                 type='submit'
-                                disabled={isSubmitting}
+                                disabled={context.state.submitting}
                                 className='bg-green-600 text-black py-3 px-6 rounded-lg shadow-lg hover:bg-green-700 transition duration-300'
                             >
-                                {isSubmitting ? 'Sending...' : 'Send Message'}
+                                {context.submitting ? 'Sending...' : 'Send Message'}
                             </button>
                         </form>
 

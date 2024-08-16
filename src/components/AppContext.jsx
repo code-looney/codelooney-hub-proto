@@ -17,6 +17,7 @@ function AppProvider({ children }) {
     const [option, setOption] = useState('');
     const [open, setOpen] = useState(false)
     const [dropdownOpen, setDropdownOpen] = useState(false);
+    const [state, handleSubmit] = useForm("xyzgjeln");
     const instagramUsername = 'codelooney';
     
 
@@ -72,22 +73,22 @@ function AppProvider({ children }) {
       setEmail(e.target.value);
     };
   
-    const handleOptionChange = (e) => {
-      setOption(e.target.value);
-    };
+    // const handleOptionChange = (e) => {
+    //   setOption(e.target.value);
+    // };
   
-    const handleClose = () => {
-      // Logic to handle close (e.g., hide form, navigate away, etc.)
-      console.log('Form closed');
-    };
+    // const handleClose = () => {
+    //   // Logic to handle close (e.g., hide form, navigate away, etc.)
+    //   console.log('Form closed');
+    // };
   
-    const handleSubmit = (e) => {
-      e.preventDefault();
-      // Handle form submission logic here
-      console.log('submitted')
-      setEmail("")
+    // const handleSubmit = (e) => {
+    //   e.preventDefault();
+    //   // Handle form submission logic here
+    //   console.log('submitted')
+    //   setEmail("")
       
-    };
+    // };
 
     const value = {
         router,
@@ -118,6 +119,7 @@ function AppProvider({ children }) {
         handleDropdownClick,
         dropdownOpen,
         setDropdownOpen,
+        state,
         toggleMobileMenuIcons: toggleMobileMenu ? "close" : "hamburger" // Derived state
     };
 

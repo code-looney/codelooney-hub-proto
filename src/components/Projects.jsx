@@ -11,8 +11,8 @@ const ProjectsPage = () => {
       title: 'Project One',
       description: 'A detailed description of Project One that highlights its key features and technologies used. This project demonstrates skills in React, Node.js, and MongoDB.',
       url: 'https://github.com/code-looney/project-one',
-      liveUrl: 'https://project-one.vercel.app', // Add the live URL for the project
-      image: '/images/project-one.jpg',
+      liveUrl: 'https://space-app-ten-iota.vercel.app/', // Add the live URL for the project
+      image: '/images/Screenshot 2024-08-16 at 21-54-22 Space tourism.png',
     },
     {
       title: 'Project Two',

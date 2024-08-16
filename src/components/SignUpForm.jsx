@@ -1,12 +1,10 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { Transition } from '@headlessui/react';
 import { AppContext } from './AppContext';
-import { useForm, ValidationError } from '@formspree/react';
-import MainTitle from './MainTitle';
+import { ValidationError } from '@formspree/react';
 
 const SignUpForm = () => {
     const context = useContext(AppContext);
-    const [state, handleSubmit] = useForm("xyzgjeln");
     const [showButton, setShowButton] = useState(false);
 
     useEffect(() => {
@@ -18,7 +16,7 @@ const SignUpForm = () => {
         }
     }, [context.open]);
 
-    if (state.succeeded) {
+    if (context.state.succeeded) {
         return (
             <Transition show={context.open === true}>
                 <div className="fixed inset-0 z-50 bg-black bg-opacity-70 flex items-center justify-center transition-opacity duration-500 ease-out">
@@ -76,7 +74,7 @@ const SignUpForm = () => {
                     >
                         X
                     </button>
-                    <form onSubmit={handleSubmit} className="h-full flex flex-col justify-center">
+                    <form onSubmit={context.handleSubmit} className="h-full flex flex-col justify-center">
                         <label htmlFor="email" className="text-2xl font-semibold mb-4 text-center text-white uppercase">Register today!</label>
                         <div className="mb-4 flex flex-col gap-1">
                             <label htmlFor="email" className="block text-gray-300">Your Email:</label>
@@ -89,7 +87,7 @@ const SignUpForm = () => {
                             <ValidationError
                                 prefix="Email"
                                 field="email"
-                                errors={state.errors}
+                                errors={context.state.errors}
                             />
                         </div>
                         <div className="mb-4 flex flex-col gap-1">
@@ -109,10 +107,10 @@ const SignUpForm = () => {
                             <ValidationError
                                 prefix="Message"
                                 field="message"
-                                errors={state.errors}
+                                errors={context.state.errors}
                             />
                         </div>
-                        <button type="submit" disabled={state.submitting} className="w-full bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700">Submit</button>
+                        <button type="submit" disabled={context.state.submitting} className="w-full bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700">Submit</button>
                     </form>
                 </div>
             </div>
