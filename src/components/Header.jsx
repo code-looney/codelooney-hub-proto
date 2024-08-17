@@ -66,7 +66,7 @@ const Header = () => {
                                         >
                                             <div className='absolute top-full left-0 w-full bg-gray-800 rounded-xl'>
                                                 <NavLink to="/one-to-one-coaching-call" 
-                                                className="block border border-1 border-gray-600 rounded-xl p-4 text-[14px] font-barlowCondensed hover:bg-[#00df9a] hover:text-black duration-300 text-center">
+                                                className="block border border-1 border-gray-600 rounded-xl p-4 text-[14px] font-barlowCondensed text-[#00df9a] hover:bg-[#00df9a] hover:text-black duration-300 text-center">
                                                     1 to one call
                                                 </NavLink>
                                             </div>
