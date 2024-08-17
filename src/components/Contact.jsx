@@ -57,7 +57,7 @@ const Contact = () => {
             <main className='flex flex-col items-center justify-center flex-1 p-6'>
                 <div className='bg-gray-800 text-green-100 rounded-lg shadow-lg max-w-4xl w-full'>
                     <div className='p-6'>
-                        <h1 className='text-3xl font-extrabold mb-4'>Contact Us</h1>
+                        <h1 className='text-3xl font-extrabold mb-4'>Contact</h1>
                         <p className='text-gray-300 mb-6'>
                             We'd love to hear from you! Please fill out the form below or contact us through our details.
                         </p>
