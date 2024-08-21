@@ -11,7 +11,7 @@ const ProjectsPage = () => {
       title: 'Space App',
       description: 'Project development still ongoing',
       url: 'https://github.com/code-looney/space-app.git',
-      liveUrl: 'https://space-app-ten-iota.vercel.app/', // Add the live URL for the project
+      liveUrl: 'https://space-k920jxo8g-code-looneys-projects.vercel.app/', // Add the live URL for the project
       image: '/images/Screenshot 2024-08-18 at 15-08-50 Space tourism.png',
     },
     // Add more projects as needed
