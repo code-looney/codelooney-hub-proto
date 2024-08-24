@@ -11,6 +11,7 @@ import Projects from "./components/Projects.jsx";
 import OneToOneCoachingCall from "./components/OneToOneCoachingCall.jsx";
 import CheckoutPage from "./components/CheckoutPage.jsx";
 import PrivacyNotice from "./components/PrivacyNotice.jsx";
+import LandingPagesShowcase from "./components/LandingPagesShowcase.jsx";
 
 export default function App() {
   const context = useContext(ThemeContext);
@@ -31,10 +32,11 @@ export default function App() {
          <SignUpForm />
           <Routes>
             <Route path="/" element={<Dashboard />} />
-            <Route path="/start-here"  element={<StartHere />}></Route>
+            {/* <Route path="/start-here"  element={<StartHere />}></Route> */}
             <Route path="/one-to-one-coaching-call" element={<OneToOneCoachingCall />}></Route>
             <Route path="/checkout" element={<CheckoutPage />}></Route>
             <Route path="/projects"  element={<Projects />}></Route>
+            <Route path="/websites"  element={<LandingPagesShowcase />}></Route>
             <Route path="/contact"  element={<Contact />}></Route>
             <Route path="/privacy-notice"  element={<PrivacyNotice />}></Route>
           </Routes>

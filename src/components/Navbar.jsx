@@ -7,9 +7,10 @@ const Navbar = () => {
   const context = useContext(AppContext); // Assuming theme is used for some purpose
 
   const navItems = [
-    { name: 'TakeOff', href: '#', id: 1 },
+    // { name: 'TakeOff', href: '#', id: 1 },
     { name: 'Coach', href: '#', id: 2 },
     { name: 'Projects', href: '#', id: 3 },
+    { name: 'Websites', href: '#', id: 3 },
     { name: 'Contact', href: '#', id: 4 },
   ];
 

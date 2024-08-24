@@ -1,29 +1,32 @@
 {
     "navigation": [
         {
-            "page": "Start here",
+            "page": "Coaching",
             "order": "00",
             "id": 1,
-            "path": "/"
-        },
-        {
-            "page": "Coaching",
-            "order": "01",
-            "id": 2
+            "path": "/coaching"
+
         },
         {
             "page": "Projects",
-            "order": "02",
-            "id": 3,
+            "order": "01",
+            "id": 2,
             "path": "/projects"
 
         },
         {
+            "page": "Websites",
+            "order": "02",
+            "id": 3,
+            "path": "/websites"
+        },
+        {
             "page": "Contact",
-            "order": "03",
+            "order": "04",
             "id": 4,
             "path": "/contact"
         }
+    
     ]
 
 }
