@@ -16,7 +16,7 @@ import LandingPagesShowcase from "./components/LandingPagesShowcase.jsx";
 export default function App() {
   const context = useContext(ThemeContext);
   const [open, setOpen] = useState(false)
-  const isUnderConstruction = false;
+  const isUnderConstruction = true;
 
   const {get, loading} = useFetch(`/`);
 
