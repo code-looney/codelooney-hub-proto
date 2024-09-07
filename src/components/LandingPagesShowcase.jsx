@@ -10,10 +10,10 @@ const LandingPagesShowcase = () => {
 
   const projects = [
     {
-      title: 'Landingspagina',
+      title: 'Fix It Pro',
       description: 'Onze Landingspagina is een veelzijdige en op maat gemaakte oplossing voor bedrijven die hun online aanwezigheid willen versterken. Deze landingspagina is ontworpen om maximale conversies te genereren door een strakke, professionele uitstraling te combineren met een gebruiksvriendelijke interface. Met strategisch geplaatste call-to-actions, overtuigende inhoud en een aantrekkelijk ontwerp, helpt deze pagina bedrijven om hun doelstellingen te bereiken, of het nu gaat om het verkrijgen van leads, het promoten van een product of het versterken van merkbekendheid. De pagina is volledig responsive en geoptimaliseerd voor zowel desktop- als mobiele apparaten, zodat je altijd de beste gebruikerservaring biedt aan je bezoekers. Ontdek hoe deze landingspagina je kan helpen om je online doelen te realiseren.',
       url: 'https://github.com/code-looney/fix-it-pro.git',
-      liveUrl: 'https://fix-it-pro.vercel.app',
+      liveUrl: 'https://fix-it-pro-client.netlify.app',
       image: '/images/Screenshot 2024-08-24 at 08-26-41 Create Next App.png',
     },
     {
