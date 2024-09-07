@@ -24,7 +24,6 @@ export default function App() {
     return (
       <UnderConstruction />
     )
-    
   }   
 
   return (
