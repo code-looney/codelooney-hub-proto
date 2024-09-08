@@ -49,7 +49,7 @@ const Dashboard = () => {
             <p className="text-sm md:text-base lg:text-lg text-gray-300 leading-relaxed">
             Ik ben een toegewijde Frontend Engineer met een ambitieuze visie: het opbouwen van mijn eigen softwarebureau. 
             Gedreven door mijn passie voor technologie en oog voor design, streef ik ernaar om verfijnde, gebruiksvriendelijke en schaalbare digitale oplossingen te creëren. 
-            Samen met mijn klanten breng ik ideeën tot leven en zet ik elke uitdaging om in een succesvol project.
+            Samen met mijn clienten breng ik ideeën tot leven en zet ik elke uitdaging om in een succesvol project.
             </p>
             <hr className="border-gray-600" />
             <Button
@@ -59,10 +59,10 @@ const Dashboard = () => {
               ease-in-out duration-300 transition focus:ring-4 focus:outline-none focus:ring-green-300 
               font-medium rounded-lg text-sm md:text-base px-5 py-2.5 text-center"
             >
-              Begin Je Reis met Mij
+             Begin hier
             </Button>
             <hr className="border-gray-600" />
-            <div className="flex gap-5 pt-3">
+            {/* <div className="flex gap-5 pt-3">
               <a
                 onClick={context.handleInstagramClick}
                 href={context.instagramAppUrl}
@@ -79,7 +79,7 @@ const Dashboard = () => {
               >
                 <GitHubLogoIcon />
               </a>
-            </div>
+            </div> */}
           </div>
         </HeroDashboard>
       </div>

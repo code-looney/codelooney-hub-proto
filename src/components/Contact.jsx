@@ -3,7 +3,6 @@ import Header from './Header';
 import MobileMenu from './MobileMenu';
 import { AppContext } from './AppContext';
 
-
 const Contact = () => {
     const [formData, setFormData] = useState({
         name: '',
@@ -38,13 +37,13 @@ const Contact = () => {
     //         });
 
     //         if (response.ok) {
-    //             setSuccessMessage('Your message has been sent successfully!');
+    //             setSuccessMessage('Je bericht is succesvol verzonden!');
     //             setFormData({ name: '', email: '', message: '' });
     //         } else {
-    //             setErrorMessage('Something went wrong. Please try again later.');
+    //             setErrorMessage('Er is iets misgegaan. Probeer het later opnieuw.');
     //         }
     //     } catch (error) {
-    //         setErrorMessage('Something went wrong. Please try again later.');
+    //         setErrorMessage('Er is iets misgegaan. Probeer het later opnieuw.');
     //     } finally {
     //         setIsSubmitting(false);
     //     }
@@ -59,14 +58,14 @@ const Contact = () => {
                     <div className='p-6'>
                         <h1 className='text-3xl font-extrabold mb-4'>Contact</h1>
                         <p className='text-gray-300 mb-6'>
-                            We'd love to hear from you! Please fill out the form below or contact us through our details.
+                            We horen graag van je! Vul het onderstaande formulier in of neem contact met ons op via de onderstaande gegevens.
                         </p>
 
-                        {/* Contact Form */}
+                        {/* Contact Formulier */}
                         <form onSubmit={context.handleSubmit} className='bg-gray-900 p-6 rounded-lg'>
                             <div className='mb-4'>
                                 <label className='block mb-2 text-gray-300'>
-                                    Full Name
+                                    Volledige Naam
                                 </label>
                                 <input
                                     type='text'
@@ -80,7 +79,7 @@ const Contact = () => {
 
                             <div className='mb-4'>
                                 <label className='block mb-2 text-gray-300'>
-                                    Email Address
+                                    E-mail Adres
                                 </label>
                                 <input
                                     type='email'
@@ -94,7 +93,7 @@ const Contact = () => {
 
                             <div className='mb-4'>
                                 <label className='block mb-2 text-gray-300'>
-                                    Message
+                                    Bericht
                                 </label>
                                 <textarea
                                     name='message'
@@ -118,31 +117,31 @@ const Contact = () => {
                                 disabled={context.state.submitting}
                                 className='bg-green-600 text-black py-3 px-6 rounded-lg shadow-lg hover:bg-green-700 transition duration-300'
                             >
-                                {context.submitting ? 'Sending...' : 'Send Message'}
+                                {context.submitting ? 'Verzenden...' : 'Verstuur Bericht'}
                             </button>
                         </form>
 
-                        {/* Contact Information */}
+                        {/* Contactinformatie */}
                         <div className='mt-8'>
-                            <h2 className='text-2xl font-bold mb-4'>Contact Information</h2>
+                            <h2 className='text-2xl font-bold mb-4'>Contactinformatie</h2>
                             <p className='text-gray-300 mb-2'>
-                                <strong>Email:</strong> <a href="mailto:daneel@codelooney.com" className='text-green-400 hover:underline'>daneel@codelooney.com</a>
+                                <strong>E-mail:</strong> <a href="mailto:daneel@codelooney.com" className='text-green-400 hover:underline'>daneel@codelooney.com</a>
                             </p>
                             <p className='text-gray-300 mb-2'>
-                                <strong>Address:</strong> Lorem ipsum dolor sit amet consectetur adipisicing.
+                                <strong>Adres:</strong> Lorem ipsum dolor sit amet consectetur adipisicing.
                             </p>
                         </div>
                     </div>
                 </div>
             </main>
             <footer className='bg-black py-4 text-center text-gray-400'>
-        <p>&copy; {new Date().getFullYear()} Code Looney. All rights reserved.</p>
-        <div className='mt-2 flex items-center justify-center gap-2'>
-          <a href="/privacy-notice" className='hover:underline'>Privacy Notice</a>
-          <span>|</span>
-          <a href="/terms-of-service" className='hover:underline'>Terms of Service</a>
-        </div>
-      </footer>
+                <p>&copy; {new Date().getFullYear()} Code Looney. Alle rechten voorbehouden.</p>
+                <div className='mt-2 flex items-center justify-center gap-2'>
+                    <a href="/privacy-notice" className='hover:underline'>Privacyverklaring</a>
+                    <span>|</span>
+                    <a href="/terms-of-service" className='hover:underline'>Gebruiksvoorwaarden</a>
+                </div>
+            </footer>
         </div>
     );
 };

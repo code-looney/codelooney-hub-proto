@@ -6,16 +6,8 @@ import { AppContext } from './AppContext';
 const ProjectsPage = () => {
   const context = useContext(AppContext);
 
-  const projects = [
-    {
-      title: 'Space App',
-      description: 'Project development still ongoing',
-      url: 'https://github.com/code-looney/space-app.git',
-      liveUrl: 'https://space-app-git-main-code-looneys-projects.vercel.app/', // Add the live URL for the project
-      image: '/images/Screenshot 2024-08-18 at 15-08-50 Space tourism.png',
-    },
     // Add more projects as needed
-  ];
+
 
   return (
     <div className='bg-black text-green-500 min-h-screen flex flex-col'>

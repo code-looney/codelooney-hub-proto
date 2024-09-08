@@ -8,7 +8,7 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        "portrait": "url(/images/zero-take-sc7EccNtU88-unsplash.jpg)"
+        "portrait": "url(/images/IMG_0201.jpeg)"
       },
       
       colors: {

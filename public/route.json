@@ -1,19 +1,6 @@
 {
     "navigation": [
         {
-            "page": "Coaching",
-            "order": "00",
-            "id": 1
-
-        },
-        {
-            "page": "Projects",
-            "order": "01",
-            "id": 2,
-            "path": "/projects"
-
-        },
-        {
             "page": "Websites",
             "order": "02",
             "id": 3,
