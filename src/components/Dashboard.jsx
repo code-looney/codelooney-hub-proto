@@ -48,8 +48,8 @@ const Dashboard = () => {
             <hr className="border-gray-600" />
             <p className="text-sm md:text-base lg:text-lg text-gray-300 leading-relaxed">
             Ik ben een toegewijde Frontend Engineer met een ambitieuze visie: het opbouwen van mijn eigen softwarebureau. 
-            Gedreven door mijn passie voor technologie en oog voor design, streef ik ernaar om verfijnde, gebruiksvriendelijke en schaalbare digitale oplossingen te creëren. 
-            Samen met mijn clienten breng ik ideeën tot leven en zet ik elke uitdaging om in een succesvol project.
+            Gedreven door mijn passie voor technologie en oog voor design, streef ik ernaar verfijnde, gebruiksvriendelijke en schaalbare digitale oplossingen te creëren. 
+            Samen met mijn cliënten breng ik ideeën tot leven en zet ik elke uitdaging om in een succesvol project.
             </p>
             <hr className="border-gray-600" />
             <Button
